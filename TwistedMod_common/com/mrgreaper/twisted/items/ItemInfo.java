@@ -36,6 +36,14 @@ public class ItemInfo {
 	public static final String DEATHORB_NAME = "Death Orb";
 	public static final String DEATHORB_ICON = "orb1";
 	
+	public static int BUNNYE_ID;
+	public static final String BUNNYE_KEY = "bunnye";
+	public static final int BUNNYE_DEFAULT = 25205;
+	
+	public static final String BUNNYE_UNLOCALIZED_NAME = "bunnyEnergized";
+	public static final String BUNNYE_NAME = "Energized Bunny";
+	public static final String BUNNYE_ICON = "bunny_energized";
+	
 	//stunned bunny removed at mo 
 	//public static int BUNNYS_ID;
 	//public static final String BUNNYS_KEY = "bunnys";

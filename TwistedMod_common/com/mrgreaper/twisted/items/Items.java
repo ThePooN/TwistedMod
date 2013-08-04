@@ -14,10 +14,12 @@ public class Items {
 	public static Item bunnya;
 	public static Item orphantear;
 	public static Item deathorb;
+	public static Item bunnye;
 	//public static Item bunnys;
 	
 	public static void init() {
 		bunnyd = new itemBunnyD(ItemInfo.BUNNYD_ID);
+		bunnye = new ItemBunnyE(ItemInfo.BUNNYE_ID);
 		bunnya = new ItemBunnyA(ItemInfo.BUNNYA_ID);
 		orphantear = new itemOrphanTear(ItemInfo.ORPHANTEAR_ID);
 		deathorb = new ItemDeathOrb(ItemInfo.DEATHORB_ID);
@@ -29,6 +31,7 @@ public class Items {
 	public static void addNames() {
 		LanguageRegistry.addName(bunnyd, ItemInfo.BUNNYD_NAME);
 		LanguageRegistry.addName(bunnya, ItemInfo.BUNNYA_NAME);
+		LanguageRegistry.addName(bunnye, ItemInfo.BUNNYE_NAME);
 		LanguageRegistry.addName(orphantear, ItemInfo.ORPHANTEAR_NAME);
 		LanguageRegistry.addName(deathorb, ItemInfo.DEATHORB_NAME);
 		//LanguageRegistry.addName(bunnys, ItemInfo.BUNNYS_NAME);
