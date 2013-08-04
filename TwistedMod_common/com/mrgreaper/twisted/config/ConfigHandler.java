@@ -25,7 +25,7 @@ public class ConfigHandler {
 		ItemInfo.BUNNYD_ID= config.getItem(ItemInfo.BUNNYD_KEY,ItemInfo.BUNNYD_DEFAULT).getInt() - 256;
 		ItemInfo.BUNNYA_ID= config.getItem(ItemInfo.BUNNYA_KEY,ItemInfo.BUNNYA_DEFAULT).getInt() - 256;
 		ItemInfo.ORPHANTEAR_ID= config.getItem(ItemInfo.ORPHANTEAR_KEY,ItemInfo.ORPHANTEAR_DEFAULT).getInt() - 256;
-		
+		ItemInfo.DEATHORB_ID= config.getItem(ItemInfo.DEATHORB_KEY,ItemInfo.DEATHORB_DEFAULT).getInt() - 256;
 		
 		config.save();
 	
