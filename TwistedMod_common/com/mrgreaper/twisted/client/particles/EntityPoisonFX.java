@@ -1,5 +1,5 @@
 package com.mrgreaper.twisted.client.particles;
-
+//this is from vswe tutorial, its here to help me rather then to be used though i may adapt it
 import com.mrgreaper.twisted.blocks.Blocks;
 
 import net.minecraft.client.particle.EntityFX;
@@ -20,7 +20,7 @@ public class EntityPoisonFX extends EntityFX{
 	}
 	
 	@Override
-	public void onUpdate(){
+	public void onUpdate(){ //every tick do this
 	super.onUpdate();
 	
 	particleScale = (1 - (float)particleAge / particleMaxAge) * 3;

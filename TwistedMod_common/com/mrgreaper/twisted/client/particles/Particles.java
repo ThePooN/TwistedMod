@@ -5,7 +5,7 @@ import net.minecraft.client.particle.EntityFX;
 import net.minecraft.world.World;
 
 public enum Particles {
-	POISON;
+	POISON;//poison particle effect by vswe, kept here so that i can see how its done (im old the memory gets ...whats the word..
 	
 	public void spawnParticle(World world, double X, double Y, double Z, double motionX, double motionY, double motionZ){
 		Minecraft mc = Minecraft.getMinecraft();
@@ -21,7 +21,7 @@ public enum Particles {
 			double distanceZ = mc.renderViewEntity.posZ - Z;
 			
 			double maxDistance = 16;
-			if (distanceX * distanceX + distanceY * distanceY + distanceZ * distanceZ > maxDistance * maxDistance){ //arghhhhhhhhhhhhhhhhhhhh! triganamutry arghhhh
+			if (distanceX * distanceX + distanceY * distanceY + distanceZ * distanceZ > maxDistance * maxDistance){ //arghhhhhhhhhhhhhhhhhhhh! Trigonometry arghhhh its here to see how far the player is from the particle so we dont render them to players too far away!
 				return;
 			}
 			

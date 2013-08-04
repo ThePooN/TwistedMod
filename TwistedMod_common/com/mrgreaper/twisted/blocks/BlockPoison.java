@@ -1,5 +1,7 @@
 package com.mrgreaper.twisted.blocks;
-
+//originly from vswe tutorial, in here at the moment as an example file 
+//wont be in the finished mod (maybe in the alphas though but not used)
+//should help me renember how to use particles
 import java.util.Random;
 
 import com.mrgreaper.twisted.client.particles.Particles;
@@ -28,17 +30,17 @@ public class BlockPoison extends Block{
 	
 	}
 	@SideOnly(Side.CLIENT)
-	public Icon particleIcon;
+	public Icon particleIcon; //this is where we set the particle image file
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister register) {
 		blockIcon = register.registerIcon(BlockInfo.TEXTURE_LOCATION + ":" + BlockInfo.POISON_TEXTURE);
-		particleIcon = register.registerIcon(BlockInfo.TEXTURE_LOCATION + ":" + BlockInfo.POISON_PARTICLE_TEXTURE);
+		particleIcon = register.registerIcon(BlockInfo.TEXTURE_LOCATION + ":" + BlockInfo.POISON_PARTICLE_TEXTURE);//the location of the particle file assets/twisted/textures/blocks/name.png
 	}
 
 @Override
-@SideOnly(Side.CLIENT)
+@SideOnly(Side.CLIENT) //we only want to track particles on the client side!
 public void randomDisplayTick(World world, int x, int y, int z, Random rand) {
 	 for (int i = 0; i < 4; i++){
 		 
@@ -54,9 +56,9 @@ public void randomDisplayTick(World world, int x, int y, int z, Random rand) {
 		// Minecraft.getMinecraft().effectRenderer.addEffect(new EntityPoisonFX(world, particleX, particleY, particleZ, particleMotionX, particleMotionY, particleMotionZ));
 	 }
 }
-	 public void onBlockClicked(World world, int x, int y, int z, EntityPlayer player){
-		 if (!world.isRemote){
-			 player.addPotionEffect(new PotionEffect(Potion.poison.id,40, 1));
+	 public void onBlockClicked(World world, int x, int y, int z, EntityPlayer player){ // an example of how to get an event in game, here its clearly when a player clicks the block
+		 if (!world.isRemote){ //this is a check to make sure were on the server side..the server will tell the client what to do ..its bossy like that
+			 player.addPotionEffect(new PotionEffect(Potion.poison.id,40, 1)); //adding potion effects is really that easy ! yikes
 		 }
 	 }
 
