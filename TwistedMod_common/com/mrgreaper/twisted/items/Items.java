@@ -21,6 +21,7 @@ public class Items {
 		bunnya = new ItemBunnyA(ItemInfo.BUNNYA_ID);
 		orphantear = new itemOrphanTear(ItemInfo.ORPHANTEAR_ID);
 		deathorb = new ItemDeathOrb(ItemInfo.DEATHORB_ID);
+		
 		//bunnys = new ItemBunnyS(ItemInfo.BUNNYS_ID, 0, 0, false);
 	}
 	
