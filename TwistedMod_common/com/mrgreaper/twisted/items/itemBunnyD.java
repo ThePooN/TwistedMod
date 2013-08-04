@@ -5,6 +5,7 @@ import com.mrgreaper.twisted.client.sounds.Sounds;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -24,9 +25,12 @@ public class itemBunnyD extends Item {
 	}
 	@Override
 	public void onCreated(ItemStack itemStack, World world, EntityPlayer player) {
+		int playerX = (int) Minecraft.getMinecraft().thePlayer.lastTickPosX;
+		int playerY = (int) Minecraft.getMinecraft().thePlayer.lastTickPosY;
+		int playerZ = (int) Minecraft.getMinecraft().thePlayer.lastTickPosZ;
+		System.out.println(playerX + " " + playerY + " " + playerZ);
 		if (!player.worldObj.isRemote){
-			System.out.println (itemStack + " : " + world + " : " + player);
-			Sounds.EVIL_LAUGH.play (player.lastTickPosX ,player.lastTickPosY, player.lastTickPosZ, 20, 1);
+			Sounds.EVIL_LAUGH.play (playerX ,playerY, playerZ, 35, 1);
 		}
 	}
 	

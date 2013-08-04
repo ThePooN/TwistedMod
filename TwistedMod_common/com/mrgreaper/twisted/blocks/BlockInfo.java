@@ -24,5 +24,16 @@ public class BlockInfo {
 	public static final String REBUNNYATOR_TOP = "rebunnyator_top";
 	public static final String REBUNNYATOR_SIDES = "rebunnyator";
 	public static final String REBUNNYATOR_TE_key = "rebunnyatorTileEntity";
+	
+	public static int STATICGEN_ID;
+	public static final String STATICGEN_KEY = "Staticgen";
+	public static final int STATICGEN_DEFAULT = 2151;
+	
+	public static final String STATICGEN_UNLOCALIZED_NAME ="staticGen";
+	public static final String STATICGEN_NAME = "Static Generator";
+	
+	public static final String STATICGEN_TOP = "rebunnyator_top"; //no texture made as yet
+	public static final String STATICGEN_SIDES = "rebunnyator"; //no texture made as yet
+	public static final String STATICGEN_TE_key = "staticgenTileEntity";
 
 }

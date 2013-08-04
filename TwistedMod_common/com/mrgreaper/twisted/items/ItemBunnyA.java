@@ -26,16 +26,12 @@ public class ItemBunnyA extends Item {
 	
 	@Override
 	public void onCreated(ItemStack itemStack, World world, EntityPlayer player) {
-		//int playerX;
 		int playerX = (int) Minecraft.getMinecraft().thePlayer.lastTickPosX;
 		int playerY = (int) Minecraft.getMinecraft().thePlayer.lastTickPosY;
 		int playerZ = (int) Minecraft.getMinecraft().thePlayer.lastTickPosZ;
 		System.out.println(playerX + " " + playerY + " " + playerZ);
-		//EntityPlayerMP entityplayermpx = playerNetServerHandler.managedPosX;
-		//		 EntityPlayerMP locx = EntityPlayerMP.managedPosX;
-//		EntityPlayerMP playermp = (EntityPlayerMP)entityplayer;
 		if (!player.worldObj.isRemote){
-			Sounds.CREATED_MONSTER.play (playerX ,playerY, playerZ, 3, 1);
+			Sounds.CREATED_MONSTER.play (playerX ,playerY, playerZ, 35, 1);
 		}else{
 			Minecraft.getMinecraft().thePlayer.addChatMessage("Dont let The evil vile creature go free!");
 		}
