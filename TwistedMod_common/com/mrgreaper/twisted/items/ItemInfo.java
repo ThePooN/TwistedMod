@@ -44,6 +44,14 @@ public class ItemInfo {
 	public static final String BUNNYE_NAME = "Energized Bunny";
 	public static final String BUNNYE_ICON = "bunny_energized";
 	
+	public static int BALLOONR_ID;
+	public static final String BALLOONR_KEY = "balloonr";
+	public static final int BALLOONR_DEFAULT = 25206;
+	
+	public static final String BALLOONR_UNLOCALIZED_NAME = "balloonR";
+	public static final String BALLOONR_NAME = "Red balloon";
+	public static final String BALLOONR_ICON = "balloon";
+	
 	//stunned bunny removed at mo 
 	//public static int BUNNYS_ID;
 	//public static final String BUNNYS_KEY = "bunnys";

@@ -16,10 +16,9 @@ public static BlockStaticGen staticgen;
 	
 	public static void init() {
 		
-		poison = new BlockPoison(BlockInfo.POISON_ID);
+		poison = new BlockPoison(BlockInfo.POISON_ID); //from vswe tutorial, kept in at mo as a live example while i dev
 		GameRegistry.registerBlock(poison, BlockInfo.POISON_KEY); 
 		
-		//added by me bellow
 		rebunnyator = new BlockRebunnyator(BlockInfo.REBUNNYATOR_ID);
 		GameRegistry.registerBlock(rebunnyator, BlockInfo.REBUNNYATOR_KEY); 
 		

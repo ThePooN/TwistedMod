@@ -1,4 +1,4 @@
-package com.mrgreaper.twisted.interfaces;
+package com.mrgreaper.twisted.client.interfaces;
 
 import net.minecraft.block.Block;
 import net.minecraft.inventory.IInventory;

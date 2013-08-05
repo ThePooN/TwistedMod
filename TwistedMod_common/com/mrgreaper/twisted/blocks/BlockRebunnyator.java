@@ -17,7 +17,7 @@ import cpw.mods.fml.common.network.FMLNetworkHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockRebunnyator extends BlockContainer{
+public class BlockRebunnyator extends BlockContainer{//as it has a tile entity we need BlockContainer
 
 	public BlockRebunnyator(int id) {
 		super(id, Material.iron);
@@ -54,8 +54,8 @@ public class BlockRebunnyator extends BlockContainer{
         @Override
 		public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
 			if (!world.isRemote) {
-				FMLNetworkHandler.openGui(player, TwistedMod.instance, 1, world, x, y, z);
-				System.out.println("it was clicked");
+				FMLNetworkHandler.openGui(player, TwistedMod.instance, 0, world, x, y, z);// the 0 after TwistedMod.instance is the gui id which references to the case in gui handeler (both server and client)
+				System.out.println("it was clicked" + player + world);
 			}
 				return true;
 				}

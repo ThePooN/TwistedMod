@@ -1,6 +1,4 @@
-package com.mrgreaper.twisted.interfaces;
-
-import com.mrgreaper.twisted.tileentities.TileEntityRebunnyator;
+package com.mrgreaper.twisted.client.interfaces;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -8,12 +6,15 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
-public class ContainerRebunnyator  extends Container{
+import com.mrgreaper.twisted.tileentities.TileEntityRebunnyator;
+import com.mrgreaper.twisted.tileentities.TileEntityStaticGen;
+
+public class ContainerStaticGen extends Container{
 	
-	private TileEntityRebunnyator rebunnyator;
+	private TileEntityStaticGen staticgen;
 	
-	public ContainerRebunnyator(InventoryPlayer invPlayer, TileEntityRebunnyator rebunnyator){
-		this.rebunnyator = rebunnyator;
+	public ContainerStaticGen(InventoryPlayer invPlayer, TileEntityStaticGen staticgen){
+		this.staticgen = staticgen;
 		
 		for (int x = 0; x < 9; x++){ // this and bellow will create code for quick bar display in gui
 			addSlotToContainer(new Slot(invPlayer, x, 8 + 18 * x, 130)); //8 + 18 * x and 130 set the location on the gui
@@ -28,7 +29,7 @@ public class ContainerRebunnyator  extends Container{
 	@Override
 	public boolean canInteractWith(EntityPlayer entityplayer) {
 		// TODO Auto-generated method stub
-		return rebunnyator.isUseableByPlayer(entityplayer);
+		return staticgen.isUseableByPlayer(entityplayer);
 	}
 	@Override 
 	public ItemStack transferStackInSlot(EntityPlayer player, int i){ //prevent shift clicking to avoid crashing

@@ -15,6 +15,7 @@ public class Items {
 	public static Item orphantear;
 	public static Item deathorb;
 	public static Item bunnye;
+	public static Item balloonr;
 	//public static Item bunnys;
 	
 	public static void init() {
@@ -23,6 +24,7 @@ public class Items {
 		bunnya = new ItemBunnyA(ItemInfo.BUNNYA_ID);
 		orphantear = new itemOrphanTear(ItemInfo.ORPHANTEAR_ID);
 		deathorb = new ItemDeathOrb(ItemInfo.DEATHORB_ID);
+		balloonr = new ItemBalloonR(ItemInfo.BALLOONR_ID);
 		
 		//bunnys = new ItemBunnyS(ItemInfo.BUNNYS_ID, 0, 0, false);
 	}
@@ -34,6 +36,7 @@ public class Items {
 		LanguageRegistry.addName(bunnye, ItemInfo.BUNNYE_NAME);
 		LanguageRegistry.addName(orphantear, ItemInfo.ORPHANTEAR_NAME);
 		LanguageRegistry.addName(deathorb, ItemInfo.DEATHORB_NAME);
+		LanguageRegistry.addName(balloonr, ItemInfo.BALLOONR_NAME);
 		//LanguageRegistry.addName(bunnys, ItemInfo.BUNNYS_NAME);
 		
 /*		for (int i = 0; i < ItemInfo.CARD_NAMES.length; i++) {

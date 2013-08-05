@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 
 import com.mrgreaper.twisted.blocks.Blocks;
 
+import com.mrgreaper.twisted.client.interfaces.GuiHandler;
 import com.mrgreaper.twisted.config.ConfigHandler;
 import com.mrgreaper.twisted.entities.Entities;
 import com.mrgreaper.twisted.items.Items;
@@ -65,7 +66,7 @@ public void load(FMLInitializationEvent event){
   
   Entities.init();
  // new GenerationHandeler();
-  //new GuiHandler();
+  new GuiHandler();
 }
 
 @EventHandler

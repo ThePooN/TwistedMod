@@ -28,7 +28,8 @@ public class ConfigHandler {
 		ItemInfo.ORPHANTEAR_ID= config.getItem(ItemInfo.ORPHANTEAR_KEY,ItemInfo.ORPHANTEAR_DEFAULT).getInt() - 256;
 		ItemInfo.DEATHORB_ID= config.getItem(ItemInfo.DEATHORB_KEY,ItemInfo.DEATHORB_DEFAULT).getInt() - 256;
 		ItemInfo.BUNNYE_ID= config.getItem(ItemInfo.BUNNYE_KEY,ItemInfo.BUNNYE_DEFAULT).getInt() - 256;
-		
+		ItemInfo.BALLOONR_ID= config.getItem(ItemInfo.BALLOONR_KEY,ItemInfo.BALLOONR_DEFAULT).getInt() - 256;
+
 		config.save();
 	
 	}
