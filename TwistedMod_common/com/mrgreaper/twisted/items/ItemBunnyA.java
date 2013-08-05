@@ -50,7 +50,50 @@ public class ItemBunnyA extends Item {
 		}
 	}
 	
-	
+    public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)
+    {
+    	Random randomGenerator = new Random();
+    	int randomInt = randomGenerator.nextInt(30);
+    	if (randomInt == 0){
+    		itemstack.stackSize --;
+    		entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.bunnye,1));
+    	}else{
+    		int randomIntB = randomGenerator.nextInt(9);
+        	if (randomIntB == 0 && entityplayer.worldObj.isRemote){
+        		Minecraft.getMinecraft().thePlayer.addChatMessage("You failed to shake the bunny enough to energize it");
+        	}
+        	if (randomIntB == 1 && entityplayer.worldObj.isRemote){
+        		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny just stares back at you");
+        	}	
+        	if (randomIntB == 2 && entityplayer.worldObj.isRemote){
+        		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny blows you a rasperry");
+        	}
+        	if (randomIntB == 3 && entityplayer.worldObj.isRemote){
+        		Minecraft.getMinecraft().thePlayer.addChatMessage("You think thats enough to energize the bunny...shake failure");
+        	}
+        	if (randomIntB == 4 && entityplayer.worldObj.isRemote){
+        		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny appears to be mocking you");
+        	}
+        	if (randomIntB == 5 && entityplayer.worldObj.isRemote){
+        		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny does a little impression of you, shaking his paw then sniggers");
+        	}
+        	if (randomIntB == 6 && entityplayer.worldObj.isRemote){
+        		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny looks puzzled for a second then throws up");
+        	}
+        	if (randomIntB == 7 && entityplayer.worldObj.isRemote){
+        		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny seems to twitch its nose in threatening manner");
+        	}
+        	if (randomIntB == 8 && entityplayer.worldObj.isRemote){
+        		Minecraft.getMinecraft().thePlayer.addChatMessage("the bunny keels over and dies");
+        	}
+        	if (randomIntB == 8){
+        		itemstack.stackSize --;
+        		entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.bunnyd,1));
+        	}
+    	}
+	 
+    	return itemstack;
+    }
 	@Override
 	@SideOnly(Side.CLIENT)
 	//here is where we add the textures etc, has to be client side ofcourse

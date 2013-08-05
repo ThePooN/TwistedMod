@@ -18,7 +18,7 @@ public class ItemBunnyE extends ItemElectric{
 		setCreativeTab(TwistedMod.tabTwisted);
 		setMaxStackSize(1);
 		setUnlocalizedName(ItemInfo.BUNNYE_UNLOCALIZED_NAME);
-		setMaxDamage(1000);
+		//setMaxDamage(1000);
 		setNoRepair();
 	}
 
@@ -26,7 +26,7 @@ public class ItemBunnyE extends ItemElectric{
 	@Override
 	public void onCreated(ItemStack itemStack, World world, EntityPlayer par3EntityPlayer)
 	{
-		this.setElectricity(itemStack, 100);
+		this.setElectricity(itemStack, 100000);
 	}
 	    
 		@Override
@@ -40,6 +40,6 @@ public class ItemBunnyE extends ItemElectric{
 		@Override
 		public float getMaxElectricityStored(ItemStack theItem) {
 			// TODO Auto-generated method stub
-			return 0;
+			return 100000;
 		}
 }
