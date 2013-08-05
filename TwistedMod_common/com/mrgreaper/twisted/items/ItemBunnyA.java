@@ -1,5 +1,7 @@
 package com.mrgreaper.twisted.items;
 
+import java.util.Random;
+
 import com.mrgreaper.twisted.TwistedMod;
 import com.mrgreaper.twisted.client.sounds.Sounds;
 
@@ -31,7 +33,18 @@ public class ItemBunnyA extends Item {
 		int playerZ = (int) Minecraft.getMinecraft().thePlayer.lastTickPosZ;
 		System.out.println(playerX + " " + playerY + " " + playerZ);
 		if (!player.worldObj.isRemote){
-			Sounds.CREATED_MONSTER.play (playerX ,playerY, playerZ, 35, 1);
+			Random randomGenerator = new Random(); //test of random
+			int randomInt = randomGenerator.nextInt(3);
+			System.out.println("the random number was "+randomInt);
+			if (randomInt == 0){
+			Sounds.CREATED_MONSTER.play (playerX ,playerY, playerZ, 150, 1);
+			}
+			if (randomInt == 1){
+				Sounds.BUNNY_RELEASE.play (playerX ,playerY, playerZ, 150, 1);
+				}
+			if (randomInt == 2){
+				Sounds.BUNNY_LITTLE.play (playerX ,playerY, playerZ, 150, 1);
+				}
 		}else{
 			Minecraft.getMinecraft().thePlayer.addChatMessage("Dont let The evil vile creature go free!");
 		}

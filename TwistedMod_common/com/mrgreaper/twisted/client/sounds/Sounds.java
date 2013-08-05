@@ -3,13 +3,7 @@ package com.mrgreaper.twisted.client.sounds;
 import net.minecraft.client.Minecraft;
 
 public enum Sounds {
-	BOMB_SPREAD("beep"),
-	BOMB_DROP("bombfall"),
-	OUT_OF_AMMO("emptyclick"),
-	WAND_USE("wand"),
-	
-	//above is part of the tutorial ..bellow is mine
-	
+	BUNNY_RELEASE("bunnyRelease"),
 	BUNNY_OWW("bunnyOww"),
 	BUNNY_LITTLE("LittleBunny"),
 	EVIL_LAUGH("laugh"),
