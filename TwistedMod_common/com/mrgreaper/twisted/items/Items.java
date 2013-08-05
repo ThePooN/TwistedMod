@@ -8,14 +8,13 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class Items {
 
-	public static Item wand;
-	public static Item card;
 	public static Item bunnyd;
 	public static Item bunnya;
 	public static Item orphantear;
 	public static Item deathorb;
 	public static Item bunnye;
 	public static Item balloonr;
+	public static Item orphanleg;
 	//public static Item bunnys;
 	
 	public static void init() {
@@ -25,6 +24,7 @@ public class Items {
 		orphantear = new itemOrphanTear(ItemInfo.ORPHANTEAR_ID);
 		deathorb = new ItemDeathOrb(ItemInfo.DEATHORB_ID);
 		balloonr = new ItemBalloonR(ItemInfo.BALLOONR_ID);
+		//orphanleg= new 
 		
 		//bunnys = new ItemBunnyS(ItemInfo.BUNNYS_ID, 0, 0, false);
 	}

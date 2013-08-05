@@ -52,6 +52,14 @@ public class ItemInfo {
 	public static final String BALLOONR_NAME = "Red balloon";
 	public static final String BALLOONR_ICON = "balloon";
 	
+	public static int ORPHANLEG_ID;
+	public static final String ORPHANLEG_KEY = "orphanleg";
+	public static final int ORPHANLEG_DEFAULT = 25207;
+	
+	public static final String ORPHANLEG_UNLOCALIZED_NAME = "orphanLeg";
+	public static final String ORPHANLEG_NAME = "Orphan Leg";
+	public static final String ORPHANLEG_ICON = "orphanleg";
+	
 	//stunned bunny removed at mo 
 	//public static int BUNNYS_ID;
 	//public static final String BUNNYS_KEY = "bunnys";
