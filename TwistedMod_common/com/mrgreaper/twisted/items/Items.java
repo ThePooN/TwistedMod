@@ -24,7 +24,7 @@ public class Items {
 		orphantear = new itemOrphanTear(ItemInfo.ORPHANTEAR_ID);
 		deathorb = new ItemDeathOrb(ItemInfo.DEATHORB_ID);
 		balloonr = new ItemBalloonR(ItemInfo.BALLOONR_ID);
-		//orphanleg= new 
+		orphanleg = new ItemOrphanLeg(ItemInfo.ORPHANLEG_ID);
 		
 		//bunnys = new ItemBunnyS(ItemInfo.BUNNYS_ID, 0, 0, false);
 	}
@@ -37,6 +37,7 @@ public class Items {
 		LanguageRegistry.addName(orphantear, ItemInfo.ORPHANTEAR_NAME);
 		LanguageRegistry.addName(deathorb, ItemInfo.DEATHORB_NAME);
 		LanguageRegistry.addName(balloonr, ItemInfo.BALLOONR_NAME);
+		LanguageRegistry.addName(orphanleg, ItemInfo.ORPHANLEG_NAME);
 		//LanguageRegistry.addName(bunnys, ItemInfo.BUNNYS_NAME);
 		
 /*		for (int i = 0; i < ItemInfo.CARD_NAMES.length; i++) {

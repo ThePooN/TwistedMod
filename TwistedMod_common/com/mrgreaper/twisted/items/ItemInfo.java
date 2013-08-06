@@ -58,7 +58,7 @@ public class ItemInfo {
 	
 	public static final String ORPHANLEG_UNLOCALIZED_NAME = "orphanLeg";
 	public static final String ORPHANLEG_NAME = "Orphan Leg";
-	public static final String ORPHANLEG_ICON = "orphanleg";
+	public static final String ORPHANLEG_ICON = "orphan_leg";
 	
 	//stunned bunny removed at mo 
 	//public static int BUNNYS_ID;

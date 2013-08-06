@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.mrgreaper.twisted.TwistedMod;
 import com.mrgreaper.twisted.client.sounds.Sounds;
+import com.mrgreaper.twisted.config.configInfo;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -63,7 +64,7 @@ public class ItemBunnyA extends Item {
     public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)
     {
     	Random randomGenerator = new Random();
-    	int randomInt = randomGenerator.nextInt(30);
+    	int randomInt = randomGenerator.nextInt(configInfo.BUNNYSTATICCHANCE);
     	if (randomInt == 0){
     		itemstack.stackSize --;
     		entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.bunnye,1));

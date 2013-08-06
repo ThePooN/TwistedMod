@@ -32,8 +32,8 @@ public class TwistedMod {
 	
     public static CreativeTabs tabTwisted = new CreativeTabs("tabTwisted") {
         public ItemStack getIconItemStack() {
-        	return new ItemStack(Item.carrot, 1, 0);
-                //return new ItemStack(Item.eyeOfEnder, 1, 0);
+        	//return new ItemStack(Item.carrot, 1, 0);
+              return new ItemStack(Items.bunnyd, 1, 0);
         	
         }
 };

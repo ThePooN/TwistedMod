@@ -6,11 +6,19 @@
   "credits" : ["a big Thanks to Vswe for his youtube video guide to modding "
   "the guys at #universalelectricity for putting up with my noob questions"
   "my cat noodles who acts as debugger and cursor catcher/guard"
-  "my mate mole who loves 16 x16 he he he he heee"],
+  "my mate mole who loves 16 x16 he he he he heee"
+  "the people at freesfx.co.uk for some of the sound effects"
+  "the fine people of youtube for tutorials on how to make my own effects too"
+  "the creator of the dead bunny texture for permission to use him"
+  ],
   "authors": [
     "Mr G Reaper AKA mrgreaper"
   ],
-  "description": "a twisted mod with stuff that mrg wanted to add to the game, enjoy and try not to be offended!",
+  "description": ["a twisted mod with stuff that i wanted to add to the game"
+  "enjoy and try not to be offended!"
+  "if you believe anything to be OP then check the configs"
+  "at the moment this is a work in progress"
+  ],
   "url" : " none yet",
   "updateUrl" : "",
   "logoFile" : "",
