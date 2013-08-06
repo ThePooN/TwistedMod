@@ -28,11 +28,15 @@ public class ItemBunnyA extends Item {
 	
 	@Override
 	public void onCreated(ItemStack itemStack, World world, EntityPlayer player) {
-		int playerX = (int) Minecraft.getMinecraft().thePlayer.lastTickPosX;
-		int playerY = (int) Minecraft.getMinecraft().thePlayer.lastTickPosY;
-		int playerZ = (int) Minecraft.getMinecraft().thePlayer.lastTickPosZ;
+		//int playerX = (int) Minecraft.getMinecraft().thePlayer.lastTickPosX;
+		//int playerY = (int) Minecraft.getMinecraft().thePlayer.lastTickPosY;
+		//int playerZ = (int) Minecraft.getMinecraft().thePlayer.lastTickPosZ;
+		int playerX = (int) player.chunkCoordX;
+		int playerY = (int) player.chunkCoordY;
+		int playerZ = (int) player.chunkCoordZ;
+		
 		System.out.println(playerX + " " + playerY + " " + playerZ);
-		//if (!player.worldObj.isRemote){
+		if (!player.worldObj.isRemote){
 			Random randomGenerator = new Random(); //test of random
 			int randomInt = randomGenerator.nextInt(3);
 			System.out.println("the random number was "+randomInt + "the entity was " + player + " theplayer :" + Minecraft.getMinecraft().thePlayer);
@@ -45,9 +49,9 @@ public class ItemBunnyA extends Item {
 			if (randomInt == 2){
 				Sounds.BUNNY_LITTLE.play (playerX ,playerY, playerZ, 150, 1);
 				}
-	//	}else{
+		}else{
 			Minecraft.getMinecraft().thePlayer.addChatMessage("Dont let The evil vile creature go free!");
-		//}
+		}
 	}
 	
     public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)
