@@ -26,7 +26,8 @@ public class ItemBunnyA extends Item {
 		setUnlocalizedName(ItemInfo.BUNNYA_UNLOCALIZED_NAME);
 	}
 	
-	@Override
+	@Override //had to make the sound play client side, making it play server side ment it was only played for the host
+	          //not too much of an issue in this circumstance but i need to find what went wrong for the future.
 	public void onCreated(ItemStack itemStack, World world, EntityPlayer player) {
 		//int playerX = (int) Minecraft.getMinecraft().thePlayer.lastTickPosX;
 		//int playerY = (int) Minecraft.getMinecraft().thePlayer.lastTickPosY;
@@ -38,7 +39,7 @@ public class ItemBunnyA extends Item {
 		System.out.println(playerX + " " + playerY + " " + playerZ);
 		if (player.worldObj.isRemote){
 			Random randomGenerator = new Random(); //test of random
-			int randomInt = randomGenerator.nextInt(3);
+			int randomInt = randomGenerator.nextInt(5);
 			System.out.println("the random number was "+randomInt + "the entity was " + player + " theplayer :" + Minecraft.getMinecraft().thePlayer);
 			if (randomInt == 0){
 			Sounds.CREATED_MONSTER.play (playerX ,playerY, playerZ, 150, 1);
@@ -48,6 +49,12 @@ public class ItemBunnyA extends Item {
 				}
 			if (randomInt == 2){
 				Sounds.BUNNY_LITTLE.play (playerX ,playerY, playerZ, 150, 1);
+				}
+			if (randomInt == 3){
+				Sounds.BUNNY_EXP.play (playerX ,playerY, playerZ, 150, 1);
+				}
+			if (randomInt == 4){
+				Sounds.BUNNY_RESSISTANCE.play (playerX ,playerY, playerZ, 150, 1);
 				}
 			Minecraft.getMinecraft().thePlayer.addChatMessage("Dont let The evil vile creature go free!");
 		}
@@ -92,6 +99,15 @@ public class ItemBunnyA extends Item {
         	if (randomIntB == 8){
         		itemstack.stackSize --;
         		entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.bunnyd,1));
+        	}
+        	if (randomIntB == 9 && entityplayer.worldObj.isRemote){
+        		Minecraft.getMinecraft().thePlayer.addChatMessage("A small charge builds but earths itself almost immediatly");
+        	}
+        	if (randomIntB == 10 && entityplayer.worldObj.isRemote){
+        		Minecraft.getMinecraft().thePlayer.addChatMessage("All that happens is your wrist aches a little");
+        	}
+        	if (randomIntB == 7 && entityplayer.worldObj.isRemote){
+        		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny seems to twitch its nose in threatening manner");
         	}
     	}
 	 

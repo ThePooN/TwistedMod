@@ -6,6 +6,8 @@ public enum Sounds {
 	BUNNY_RELEASE("bunnyRelease"),
 	BUNNY_OWW("bunnyOww"),
 	BUNNY_LITTLE("LittleBunny"),
+	BUNNY_RESSISTANCE("bunnyResistance"),
+	BUNNY_EXP("bunnyExp"),
 	EVIL_LAUGH("laugh"),
 	CREATED_MONSTER("monster");
 	
