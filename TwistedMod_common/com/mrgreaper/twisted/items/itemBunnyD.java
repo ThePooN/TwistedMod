@@ -25,11 +25,11 @@ public class itemBunnyD extends Item {
 	}
 	@Override
 	public void onCreated(ItemStack itemStack, World world, EntityPlayer player) {
-		int playerX = (int) Minecraft.getMinecraft().thePlayer.lastTickPosX;
-		int playerY = (int) Minecraft.getMinecraft().thePlayer.lastTickPosY;
-		int playerZ = (int) Minecraft.getMinecraft().thePlayer.lastTickPosZ;
+		int playerX = (int) player.prevPosX;
+		int playerY = (int) player.prevPosY;
+		int playerZ = (int) player.prevPosZ;
 		System.out.println(playerX + " " + playerY + " " + playerZ);
-		if (!player.worldObj.isRemote){
+		if (player.worldObj.isRemote){
 			Sounds.EVIL_LAUGH.play (playerX ,playerY, playerZ, 35, 1);
 		}
 	}
