@@ -1,6 +1,8 @@
 package com.mrgreaper.twisted.client.sounds;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
+import net.minecraft.world.World;
 
 public enum Sounds {
 	BUNNY_RELEASE("bunnyRelease"),
@@ -8,7 +10,9 @@ public enum Sounds {
 	BUNNY_LITTLE("LittleBunny"),
 	BUNNY_RESSISTANCE("bunnyResistance"),
 	BUNNY_EXP("bunnyExp"),
+	BUNNY_ELECTRIC("bunnyElectricfy"),
 	EVIL_LAUGH("laugh"),
+	DEATH_ORB_LAUNCH("deathOrbLaunch"),
 	CREATED_MONSTER("monster");
 	
 	public static final String SOUNDS_LOCATION = "twisted";
@@ -25,5 +29,9 @@ public enum Sounds {
 	public void play(double x, double y, double z, float volume, float pitch){
 		Minecraft.getMinecraft().sndManager.playSound(SOUNDS_LOCATION + ":" + name, (float)x, (float)y, (float)z, volume, pitch);
 	}
+    //bellow should of been a helper for playing sounds on entity but it failed no idea why!
+		public void onEntityPlay(World world,Entity entityName,float volume ,float pitch){
+			world.playSoundAtEntity(entityName,(SOUNDS_LOCATION + ":" + name), (float)volume,(float) pitch);
+		}
 
 }

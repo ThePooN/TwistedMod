@@ -24,7 +24,7 @@ public class Items {
 		orphantear = new itemOrphanTear(ItemInfo.ORPHANTEAR_ID);
 		deathorb = new ItemDeathOrb(ItemInfo.DEATHORB_ID);
 		balloonr = new ItemBalloonR(ItemInfo.BALLOONR_ID);
-		orphanleg = new ItemOrphanLeg(ItemInfo.ORPHANLEG_ID);
+		orphanleg = new ItemOrphanLeg(ItemInfo.ORPHANLEG_ID, 2, true);
 		
 		//bunnys = new ItemBunnyS(ItemInfo.BUNNYS_ID, 0, 0, false);
 	}
@@ -70,6 +70,14 @@ public class Items {
 								
 								'D', Block.dirt, //items used in the above list
 								'C', Item.carrot 
+							 });
+		GameRegistry.addRecipe(new ItemStack(deathorb),//output item
+				new Object[] { 	" F ",//crafting grid
+								"FIF",
+								" F ",
+								
+								'F', Item.flint, //items used in the above list
+								'I', Item.ingotIron 
 							 });
 		
 		

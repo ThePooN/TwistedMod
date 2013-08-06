@@ -3,6 +3,7 @@ package com.mrgreaper.twisted.items;
 import java.util.Random;
 
 import com.mrgreaper.twisted.TwistedMod;
+import com.mrgreaper.twisted.client.sounds.Sounds;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -31,7 +32,9 @@ public class ItemDeathOrb extends Item {
 	    	System.out.println(itemstack.stackSize + " " + itemstack);
 	    	itemstack.stackSize --;
 	    	System.out.println(itemstack.stackSize + " " + itemstack);
-	    	
+	    	if (!entityplayer.worldObj.isRemote){
+	    		Sounds.DEATH_ORB_LAUNCH.onEntityPlay(world, entityplayer, 1, 1);
+	    	}
 	      	Random randomGenerator = new Random();
 	    	int randomInt = randomGenerator.nextInt(3);
 	    	if (randomInt == 0){
