@@ -1,0 +1,21 @@
+[
+{
+  "modid" : "TwistedMod",
+  "name" : "Mr G Reapers twisted mod",
+  "version" : "0.1",
+  "credits" : ["a big Thanks to Vswe for his youtube video guide to modding "
+  "the guys at #universalelectricity for putting up with my noob questions"
+  "my cat noodles who acts as debugger and cursor catcher/guard"
+  "my mate mole who loves 16 x16 he he he he heee"],
+  "authors": [
+    "Mr G Reaper AKA mrgreaper"
+  ],
+  "description": "a twisted mod with stuff that mrg wanted to add to the game, enjoy and try not to be offended!",
+  "url" : " none yet",
+  "updateUrl" : "",
+  "logoFile" : "",
+  "parent" : "",
+  "screenshots": [
+  ]
+}
+]

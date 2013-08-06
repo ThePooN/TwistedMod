@@ -32,10 +32,10 @@ public class ItemBunnyA extends Item {
 		int playerY = (int) Minecraft.getMinecraft().thePlayer.lastTickPosY;
 		int playerZ = (int) Minecraft.getMinecraft().thePlayer.lastTickPosZ;
 		System.out.println(playerX + " " + playerY + " " + playerZ);
-		if (!player.worldObj.isRemote){
+		//if (!player.worldObj.isRemote){
 			Random randomGenerator = new Random(); //test of random
 			int randomInt = randomGenerator.nextInt(3);
-			System.out.println("the random number was "+randomInt);
+			System.out.println("the random number was "+randomInt + "the entity was " + player + " theplayer :" + Minecraft.getMinecraft().thePlayer);
 			if (randomInt == 0){
 			Sounds.CREATED_MONSTER.play (playerX ,playerY, playerZ, 150, 1);
 			}
@@ -45,9 +45,9 @@ public class ItemBunnyA extends Item {
 			if (randomInt == 2){
 				Sounds.BUNNY_LITTLE.play (playerX ,playerY, playerZ, 150, 1);
 				}
-		}else{
+	//	}else{
 			Minecraft.getMinecraft().thePlayer.addChatMessage("Dont let The evil vile creature go free!");
-		}
+		//}
 	}
 	
     public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)
