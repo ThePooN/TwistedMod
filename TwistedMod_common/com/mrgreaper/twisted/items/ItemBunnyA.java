@@ -31,9 +31,9 @@ public class ItemBunnyA extends Item {
 		//int playerX = (int) Minecraft.getMinecraft().thePlayer.lastTickPosX;
 		//int playerY = (int) Minecraft.getMinecraft().thePlayer.lastTickPosY;
 		//int playerZ = (int) Minecraft.getMinecraft().thePlayer.lastTickPosZ;
-		int playerX = (int) player.chunkCoordX;
-		int playerY = (int) player.chunkCoordY;
-		int playerZ = (int) player.chunkCoordZ;
+		int playerX = (int) player.prevPosX;
+		int playerY = (int) player.prevPosY;
+		int playerZ = (int) player.prevPosZ;
 		
 		System.out.println(playerX + " " + playerY + " " + playerZ);
 		if (!player.worldObj.isRemote){
