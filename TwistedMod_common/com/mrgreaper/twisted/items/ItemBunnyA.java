@@ -36,7 +36,7 @@ public class ItemBunnyA extends Item {
 		int playerZ = (int) player.prevPosZ;
 		
 		System.out.println(playerX + " " + playerY + " " + playerZ);
-		if (!player.worldObj.isRemote){
+		if (player.worldObj.isRemote){
 			Random randomGenerator = new Random(); //test of random
 			int randomInt = randomGenerator.nextInt(3);
 			System.out.println("the random number was "+randomInt + "the entity was " + player + " theplayer :" + Minecraft.getMinecraft().thePlayer);
@@ -49,7 +49,6 @@ public class ItemBunnyA extends Item {
 			if (randomInt == 2){
 				Sounds.BUNNY_LITTLE.play (playerX ,playerY, playerZ, 150, 1);
 				}
-		}else{
 			Minecraft.getMinecraft().thePlayer.addChatMessage("Dont let The evil vile creature go free!");
 		}
 	}
