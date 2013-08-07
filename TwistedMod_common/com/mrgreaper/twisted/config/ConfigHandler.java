@@ -37,7 +37,8 @@ public class ConfigHandler {
 		//Configuration.getCategory(CATEGORY_GENERAL);
 	    //Property BUNNYSTATICCHANCE = config.get(Configuration.CATEGORY_GENERAL, "bunny static chance (in%)", 30);
 	    configInfo.BUNNYSTATICCHANCE= config.get(Configuration.CATEGORY_GENERAL, configInfo.BUNNYSTATICCHANCE_KEY, configInfo.BUNNYSTATICCHANCE_DEFAULT).getInt();
-	    
+	    configInfo.DEBUG = config.get(Configuration.CATEGORY_GENERAL, configInfo.DEBUG_KEY, false).getBoolean(false);
+	    configInfo.LSMELT = config.get(Configuration.CATEGORY_GENERAL, configInfo.LSMELT_KEY, true).getBoolean(true);
 	    
 		config.save();
 	}

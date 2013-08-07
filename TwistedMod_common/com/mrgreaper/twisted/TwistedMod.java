@@ -8,6 +8,7 @@ import com.mrgreaper.twisted.blocks.Blocks;
 
 import com.mrgreaper.twisted.client.interfaces.GuiHandler;
 import com.mrgreaper.twisted.config.ConfigHandler;
+import com.mrgreaper.twisted.config.configInfo;
 import com.mrgreaper.twisted.entities.Entities;
 import com.mrgreaper.twisted.items.Items;
 import com.mrgreaper.twisted.network.ModInformation;
@@ -48,7 +49,11 @@ public static CommonProxy proxy;
 public void preInit(FMLPreInitializationEvent event){
 	//in here stuff is loaded like loading textures and sounds, aking configs etc
     ConfigHandler.init(event.getSuggestedConfigurationFile());
-	
+	if (configInfo.DEBUG){
+		System.out.println("++++DEBUG MODE ON++++");
+	}else{
+		System.out.println("-----DEBUG MODE OFF----");
+	}
 	Items.init();
 	Blocks.init();
 	

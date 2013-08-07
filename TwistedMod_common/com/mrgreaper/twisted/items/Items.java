@@ -1,5 +1,7 @@
 package com.mrgreaper.twisted.items;
 
+import com.mrgreaper.twisted.config.configInfo;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -63,14 +65,14 @@ public class Items {
 								'D', Block.dirt, //items used in the above list
 								'C', Item.carrot 
 							 });	
-		GameRegistry.addRecipe(new ItemStack(bunnya),//output item
+		if (configInfo.DEBUG){GameRegistry.addRecipe(new ItemStack(bunnya),//make sure this recipie is only available in debug mode
 				new Object[] { 	"  D",//crafting grid
 								" C ",
 								"  D",
 								
 								'D', Block.dirt, //items used in the above list
 								'C', Item.carrot 
-							 });
+							 });}
 		GameRegistry.addRecipe(new ItemStack(deathorb),//output item
 				new Object[] { 	" F ",//crafting grid
 								"FIF",
@@ -85,7 +87,7 @@ public class Items {
 		GameRegistry.addSmelting(Items.bunnyd.itemID ,new ItemStack(bunnya) , 0.1f);
 		
 		//from craft
-		GameRegistry.addSmelting(Item.rottenFlesh.itemID, new ItemStack(Item.leather), 0.1f);
+        if (configInfo.LSMELT){GameRegistry.addSmelting(Item.rottenFlesh.itemID, new ItemStack(Item.leather), 0.1f);}
 		
 		//other mod helpers
 	}

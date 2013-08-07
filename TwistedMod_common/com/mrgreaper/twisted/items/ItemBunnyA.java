@@ -38,11 +38,11 @@ public class ItemBunnyA extends Item {
 		int playerX = (int) player.prevPosX;
 		int playerY = (int) player.prevPosY;
 		int playerZ = (int) player.prevPosZ;
-		System.out.println(playerX + " " + playerY + " " + playerZ);
+		if (configInfo.DEBUG){System.out.println(playerX + " " + playerY + " " + playerZ);}
 		if (!player.worldObj.isRemote){
 			Random randomGenerator = new Random(); //test of random
 			int randomInt = randomGenerator.nextInt(5);
-			System.out.println("the random number was "+randomInt + "the entity was " + player + " theplayer :" + Minecraft.getMinecraft().thePlayer);
+			if (configInfo.DEBUG){System.out.println("the random number was "+randomInt + "the entity was " + player + " theplayer :" + Minecraft.getMinecraft().thePlayer);}
 			if (randomInt == 0){
 			      Sounds.CREATED_MONSTER.onEntityPlay(world, player, 1, 1); //test of onentity play of sound server side so that all hear it
 				//Sounds.CREATED_MONSTER.play (playerX ,playerY, playerZ, 150, 1);
@@ -63,8 +63,7 @@ public class ItemBunnyA extends Item {
 				Sounds.BUNNY_RESSISTANCE.onEntityPlay(world, player, 1, 1);
 				//Sounds.BUNNY_RESSISTANCE.play (playerX ,playerY, playerZ, 150, 1);
 				}
-			Minecraft.getMinecraft().thePlayer.addChatMessage("Dont let The evil vile creature go free!");
-		}
+		}else{Minecraft.getMinecraft().thePlayer.addChatMessage("Dont let The evil vile creature go free!");}
 	}
 	
     public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)
@@ -77,7 +76,7 @@ public class ItemBunnyA extends Item {
     	if (randomInt == 0){
     		itemstack.stackSize --;
     		if (!entityplayer.worldObj.isRemote){ //lets do this bit serverside
-    		entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.bunnye,1));
+    		entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.bunnye));
     		Sounds.BUNNY_ELECTRIC.onEntityPlay(world, entityplayer, 1, 1); // new sound test
     		}
     		//Sounds.BUNNY_ELECTRIC.play (playerX ,playerY, playerZ, 150, 1);
@@ -107,13 +106,12 @@ public class ItemBunnyA extends Item {
         	if (randomIntB == 7 && entityplayer.worldObj.isRemote){
         		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny seems to twitch its nose in threatening manner.");
         	}
-        	if (randomIntB == 8 && entityplayer.worldObj.isRemote){
+        	if (randomIntB == 8){ 
+        		if (entityplayer.worldObj.isRemote){
         		Minecraft.getMinecraft().thePlayer.addChatMessage("the bunny keels over and dies");
-        	}
-        	if (randomIntB == 8){
-        		itemstack.stackSize --;
+        	    }else{itemstack.stackSize --;
         		entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.bunnyd,1));
-        		Sounds.BUNNY_OWW.onEntityPlay(world, entityplayer, 1, 1);
+        		Sounds.BUNNY_OWW.onEntityPlay(world, entityplayer, 1, 1);}     		
         	}
         	if (randomIntB == 9 && entityplayer.worldObj.isRemote){
         		Minecraft.getMinecraft().thePlayer.addChatMessage("A small charge builds but earths itself almost immediatly.");
@@ -136,12 +134,11 @@ public class ItemBunnyA extends Item {
         	if (randomIntB == 15 && entityplayer.worldObj.isRemote){
         		Minecraft.getMinecraft().thePlayer.addChatMessage("Oh my thats not good, it didnt give it enough static charge but it did fluff up its furr a bit.");
         	}
-        	if (randomIntB == 16 && entityplayer.worldObj.isRemote){
+        	if (randomIntB == 16){ if (entityplayer.worldObj.isRemote){
         		Minecraft.getMinecraft().thePlayer.addChatMessage("It bites you and wont seem to let go.");
+        	}else{entityplayer.attackEntityFrom(DamageSource.generic, 1.0F);}
         	}
-        	if (randomIntB == 16 && !entityplayer.worldObj.isRemote){
-        		entityplayer.attackEntityFrom(DamageSource.generic, 1.0F);
-        	}
+        	
     	}
 	 
     	return itemstack;
