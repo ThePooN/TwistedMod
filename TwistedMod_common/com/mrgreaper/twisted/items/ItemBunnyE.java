@@ -21,25 +21,26 @@ public class ItemBunnyE extends ItemElectric{
 		//setMaxDamage(1000);
 		setNoRepair();
 	}
+	//this.setElectricity(itemstack, 10000);
 
-	
 	@Override
 	public void onCreated(ItemStack itemStack, World world, EntityPlayer par3EntityPlayer)
 	{
 		this.setElectricity(itemStack, 100000);
+		System.out.println("have i been called? ");
 	}
 	    
-		@Override
-		@SideOnly(Side.CLIENT)
-		//here is where we add the textures etc, has to be client side ofcourse
-		public void registerIcons(IconRegister register) {
-			itemIcon = register.registerIcon(ItemInfo.TEXTURE_LOCATION + ":" + ItemInfo.BUNNYE_ICON);
-		}
+    @Override
+	@SideOnly(Side.CLIENT)
+	//here is where we add the textures etc, has to be client side ofcourse
+	public void registerIcons(IconRegister register) {
+	itemIcon = register.registerIcon(ItemInfo.TEXTURE_LOCATION + ":" + ItemInfo.BUNNYE_ICON);
+	}
 
 
-		@Override
-		public float getMaxElectricityStored(ItemStack theItem) {
-			// TODO Auto-generated method stub
-			return 100000;
-		}
+	@Override
+	public float getMaxElectricityStored(ItemStack theItem) {
+	// TODO Auto-generated method stub
+	return 100000;
+	}
 }

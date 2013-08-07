@@ -14,7 +14,7 @@ public class ItemOrphanLeg extends ItemFood {
 	//public ItemOrphanLeg(int id) {
 		//super(id);
 		public ItemOrphanLeg(int id, int par2, boolean par3) {
-		super(id, 1, true);
+		super(id, 3, true);
 		// TODO Auto-generated constructor stub
 		setCreativeTab(TwistedMod.tabTwisted);
 		setMaxStackSize(1);

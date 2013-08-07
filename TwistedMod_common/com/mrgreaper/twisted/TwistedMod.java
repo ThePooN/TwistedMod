@@ -50,10 +50,13 @@ public void preInit(FMLPreInitializationEvent event){
 	//in here stuff is loaded like loading textures and sounds, aking configs etc
     ConfigHandler.init(event.getSuggestedConfigurationFile());
 	if (configInfo.DEBUG){
+		System.out.println("++++ Twisted Mod ++++");
 		System.out.println("++++DEBUG MODE ON++++");
 	}else{
+		System.out.println("----  Twisted Mod   ---");
 		System.out.println("-----DEBUG MODE OFF----");
 	}
+	System.out.println("By Mr G Reaper...WARNING may contain bunnys!");
 	Items.init();
 	Blocks.init();
 	

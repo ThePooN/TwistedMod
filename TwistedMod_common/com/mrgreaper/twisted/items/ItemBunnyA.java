@@ -9,6 +9,7 @@ import com.mrgreaper.twisted.config.configInfo;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
@@ -18,6 +19,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import universalelectricity.core.item.ItemElectric;
 
 public class ItemBunnyA extends Item {
 
@@ -66,7 +68,19 @@ public class ItemBunnyA extends Item {
 		}else{Minecraft.getMinecraft().thePlayer.addChatMessage("Dont let The evil vile creature go free!");}
 	}
 	
-    public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)
+/*	public static ItemStack genNewItem(int charge){
+	     ItemStack stack = new ItemStack(Items.bunnye, 1);
+	     stack.getItem().setCharge(1000);
+	     return stack;
+	}*/
+	public void elecbunnyhelper(ItemStack itemstack, int charge,EntityPlayer entityplayer) {
+		itemStack = itemstack.setEnergyStored();
+		itemstack.setEnergyStored(charge);
+	entityplayer.inventory.addItemStackToInventory(itemstack);
+	};
+	
+	
+	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)
     {
 		int playerX = (int) entityplayer.prevPosX;
 		int playerY = (int) entityplayer.prevPosY;
@@ -76,7 +90,8 @@ public class ItemBunnyA extends Item {
     	if (randomInt == 0){
     		itemstack.stackSize --;
     		if (!entityplayer.worldObj.isRemote){ //lets do this bit serverside
-    		entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.bunnye));
+ //   			itemstack = new ItemStack (Items.bunnye).setEnergyStored(10000);
+    		entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.bunnye,1,1000));
     		Sounds.BUNNY_ELECTRIC.onEntityPlay(world, entityplayer, 1, 1); // new sound test
     		}
     		//Sounds.BUNNY_ELECTRIC.play (playerX ,playerY, playerZ, 150, 1);
