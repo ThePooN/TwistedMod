@@ -73,16 +73,30 @@ public class ItemBunnyA extends Item {
 	     stack.getItem().setCharge(1000);
 	     return stack;
 	}*/
-	public void elecbunnyhelper(ItemStack itemstack, int charge,EntityPlayer entityplayer) {
-		itemStack = itemstack.setEnergyStored();
-		itemstack.setEnergyStored(charge);
-	entityplayer.inventory.addItemStackToInventory(itemstack);
-	};
+
 	
 	
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)
     {
-		int playerX = (int) entityplayer.prevPosX;
+		if (!entityplayer.worldObj.isRemote){//we only want to do this on the server side or it gets ...interesting
+		Random randomGenerator = new Random();
+    	//int randomInt = randomGenerator.nextInt(configInfo.BUNNYSTATICCHANCE);
+    	int randomInt = randomGenerator.nextInt(1);
+    	if (randomInt == 0){
+    		//ok so check if its o out of what ever is set in our bunnystaticchance..if it is, kill the live bunny and replace it with a static one
+    		entityplayer.destroyCurrentEquippedItem(); //lets kill the bunny in thier hands mooooo ha ha ha ha ha haaa
+    		if (configInfo.DEBUG) { System.out.println("random number on bunny right click is "+ randomInt);//if debug is on lets look at that number :)
+    		entityplayer.entityDropItem(new ItemStack(Items.bunnye), 1);
+    		 		
+    		}
+    		
+    		
+    	}
+    	}
+		
+		
+		//old method bellow
+		/*int playerX = (int) entityplayer.prevPosX;
 		int playerY = (int) entityplayer.prevPosY;
 		int playerZ = (int) entityplayer.prevPosZ;
     	Random randomGenerator = new Random();
@@ -154,7 +168,7 @@ public class ItemBunnyA extends Item {
         	}else{entityplayer.attackEntityFrom(DamageSource.generic, 1.0F);}
         	}
         	
-    	}
+    	}*/
 	 
     	return itemstack;
     }

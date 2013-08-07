@@ -23,6 +23,13 @@ public class ItemBunnyE extends ItemElectric{
 	}
 	//this.setElectricity(itemstack, 10000);
 
+/*	public void elecbunnyhelper(ItemStack itemstack, int charge,EntityPlayer entityplayer) {
+		itemstack = itemstack.setEnergyStored();
+		itemstack.setEnergyStored(charge);
+	entityplayer.inventory.addItemStackToInventory(itemstack);
+	};*/
+	
+	
 	@Override
 	public void onCreated(ItemStack itemStack, World world, EntityPlayer par3EntityPlayer)
 	{
