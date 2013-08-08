@@ -11,10 +11,12 @@ import com.mrgreaper.twisted.config.ConfigHandler;
 import com.mrgreaper.twisted.config.configInfo;
 import com.mrgreaper.twisted.entities.Entities;
 import com.mrgreaper.twisted.items.Items;
+import com.mrgreaper.twisted.items.recipies;
 import com.mrgreaper.twisted.network.ModInformation;
 import com.mrgreaper.twisted.proxies.CommonProxy;
 
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -67,7 +69,7 @@ public void preInit(FMLPreInitializationEvent event){
 @EventHandler
 public void load(FMLInitializationEvent event){
   Items.addNames();
-  Items.registerRecipes();
+  recipies.registerRecipes();
   Blocks.addNames();
   Blocks.registerTileEntities();
   LanguageRegistry.instance().addStringLocalization("itemGroup.tabTwisted", "en_US", "Mr G Reapers Twisted Tab");
@@ -79,7 +81,35 @@ public void load(FMLInitializationEvent event){
 
 @EventHandler
 public void modsLoaded(FMLPreInitializationEvent event){
-	
+	     if (Loader.isModLoaded("AppliedEnergistics")) {
+	            try {
+	                     configInfo.appEngLoaded = true;
+	                      
+	                System.out.println( "AppliedEnergistics detected by twisted mod");
+	            }
+	            catch (Exception e) {
+	                System.out.println("Could not load appeng settings");
+	                e.printStackTrace(System.err);
+	            }
+	     }else{ 
+	    	 configInfo.appEngLoaded = false;
+	     }
+	     if (Loader.isModLoaded("IC2")) {
+	            try {
+	                     configInfo.IC2Loaded = true;
+	                      
+	                System.out.println( "ic2 detected by twisted mod");
+	            }
+	            catch (Exception e) {
+	                System.out.println("Could not load appeng settings");
+	                e.printStackTrace(System.err);
+	            }
+	     }else{ 
+	    	 configInfo.appEngLoaded = false;
+	     }
+	     
 }
+	        
+	
 
 }

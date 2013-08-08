@@ -30,8 +30,6 @@ public class Items {
 		
 		//bunnys = new ItemBunnyS(ItemInfo.BUNNYS_ID, 0, 0, false);
 	}
-	
-	
 	public static void addNames() {
 		LanguageRegistry.addName(bunnyd, ItemInfo.BUNNYD_NAME);
 		LanguageRegistry.addName(bunnya, ItemInfo.BUNNYA_NAME);
@@ -42,53 +40,6 @@ public class Items {
 		LanguageRegistry.addName(orphanleg, ItemInfo.ORPHANLEG_NAME);
 		//LanguageRegistry.addName(bunnys, ItemInfo.BUNNYS_NAME);
 		
-/*		for (int i = 0; i < ItemInfo.CARD_NAMES.length; i++) {
-			LanguageRegistry.addName(new ItemStack(card,  1, i), ItemInfo.CARD_NAMES[i]);
-		}*/
-	}
-	//GameRegistry.addRecipe(new ItemStack(wand, 10) would make 10
-	public static void registerRecipes() {
-/*		GameRegistry.addRecipe(new ItemStack(wand),//output item
-			new Object[] { 	"  X",//crafting grid
-							" / ",
-							"/  ",
-							
-							'X', Item.goldenCarrot, //items used in the above list
-							'/', Item.stick 
-						 });	*/	
-		//my recipes
-		GameRegistry.addRecipe(new ItemStack(bunnyd),//output item
-				new Object[] { 	"D D",//crafting grid
-								" C ",
-								"D D",
-								
-								'D', Block.dirt, //items used in the above list
-								'C', Item.carrot 
-							 });	
-		if (configInfo.DEBUG){GameRegistry.addRecipe(new ItemStack(bunnya),//make sure this recipie is only available in debug mode
-				new Object[] { 	"  D",//crafting grid
-								" C ",
-								"  D",
-								
-								'D', Block.dirt, //items used in the above list
-								'C', Item.carrot 
-							 });}
-		GameRegistry.addRecipe(new ItemStack(deathorb),//output item
-				new Object[] { 	" F ",//crafting grid
-								"FIF",
-								" F ",
-								
-								'F', Item.flint, //items used in the above list
-								'I', Item.ingotIron 
-							 });
-		
-		
-		//smelting recipies
-		GameRegistry.addSmelting(Items.bunnyd.itemID ,new ItemStack(bunnya) , 0.1f);
-		
-		//from craft
-        if (configInfo.LSMELT){GameRegistry.addSmelting(Item.rottenFlesh.itemID, new ItemStack(Item.leather), 0.1f);}
-		
-		//other mod helpers
-	}
+
+}
 }

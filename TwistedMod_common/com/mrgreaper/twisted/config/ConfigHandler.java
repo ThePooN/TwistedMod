@@ -39,8 +39,12 @@ public class ConfigHandler {
 	    configInfo.BUNNYSTATICCHANCE= config.get(Configuration.CATEGORY_GENERAL, configInfo.BUNNYSTATICCHANCE_KEY, configInfo.BUNNYSTATICCHANCE_DEFAULT).getInt();
 	    configInfo.DEBUG = config.get(Configuration.CATEGORY_GENERAL, configInfo.DEBUG_KEY, false).getBoolean(false);
 	    configInfo.LSMELT = config.get(Configuration.CATEGORY_GENERAL, configInfo.LSMELT_KEY, true).getBoolean(true);
+	    configInfo.SCRAFT = config.get(Configuration.CATEGORY_GENERAL, configInfo.SCRAFT_KEY, true).getBoolean(true);
+	    configInfo.APPENG = config.get(Configuration.CATEGORY_GENERAL, configInfo.APPENG_KEY, true).getBoolean(true);
+	    configInfo.IC2HELPER= config.get(Configuration.CATEGORY_GENERAL, configInfo.IC2HELPER_KEY, true).getBoolean(true);
+		
 	    
-		config.save();
+	    config.save();
 	}
 
 }
