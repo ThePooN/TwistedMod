@@ -39,13 +39,13 @@ public class ItemDeathOrb extends Item {
 	      	Random randomGenerator = new Random();
 	    	int randomInt = randomGenerator.nextInt(3);
 	    	if (randomInt == 0){
-	    	entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.balloonr,1));
-	    	}
+	    	    entityplayer.entityDropItem(new ItemStack(Items.balloonr), 1);
+	    	    }
 	    	if (randomInt == 1){
-		    	entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.orphantear,1));
+		    	entityplayer.entityDropItem(new ItemStack(Items.orphanleg), 1);
 		    	}
 	    	if (randomInt == 2){
-		    	entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.orphanleg,1));
+		    	entityplayer.entityDropItem(new ItemStack(Items.orphantear), 1);
 		    	}
 	    	return itemstack;
 	    }

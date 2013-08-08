@@ -80,8 +80,7 @@ public class ItemBunnyA extends Item {
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer){
 		if (!entityplayer.worldObj.isRemote){//we only want to do this on the server side or it gets ...interesting
 		Random randomGenerator = new Random();
-    	//int randomInt = randomGenerator.nextInt(configInfo.BUNNYSTATICCHANCE);
-    	int randomInt = randomGenerator.nextInt(30);
+    	int randomInt = randomGenerator.nextInt(configInfo.BUNNYSTATICCHANCE);
     	if (randomInt == 0){
     		//ok so check if its o out of what ever is set in our bunnystaticchance..if it is, kill the live bunny and replace it with a static one
     		entityplayer.destroyCurrentEquippedItem(); //lets kill the bunny in thier hands mooooo ha ha ha ha ha haaa
@@ -90,92 +89,11 @@ public class ItemBunnyA extends Item {
     		entityplayer.entityDropItem(new ItemStack(Items.bunnye), 1);
     		Sounds.BUNNY_ELECTRIC.onEntityPlay(world, entityplayer, 1, 1); // new sound test
     		}else{
-    			int randomInt2 = randomGenerator.nextInt(3);
+    			int randomInt2 = randomGenerator.nextInt(24);
     			bunnyShakeFailHandler(randomInt2, itemstack, entityplayer, world);
     		}
 		} 
 		return itemstack;}
-    		
-    		
-    	
-		
-		
-		//old method bellow
-		/*int playerX = (int) entityplayer.prevPosX;
-		int playerY = (int) entityplayer.prevPosY;
-		int playerZ = (int) entityplayer.prevPosZ;
-    	Random randomGenerator = new Random();
-    	int randomInt = randomGenerator.nextInt(configInfo.BUNNYSTATICCHANCE);
-    	if (randomInt == 0){
-    		itemstack.stackSize --;
-    		if (!entityplayer.worldObj.isRemote){ //lets do this bit serverside
- //   			itemstack = new ItemStack (Items.bunnye).setEnergyStored(10000);
-    		entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.bunnye,1,1000));
-    		Sounds.BUNNY_ELECTRIC.onEntityPlay(world, entityplayer, 1, 1); // new sound test
-    		}
-    		//Sounds.BUNNY_ELECTRIC.play (playerX ,playerY, playerZ, 150, 1);
-    	}else{
-    		int randomIntB = randomGenerator.nextInt(17);
-        	if (randomIntB == 0 && entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("You failed to shake the bunny enough to energize it.");
-        	}
-        	if (randomIntB == 1 && entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny just stares back at you.");
-        	}	
-        	if (randomIntB == 2 && entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny blows you a rasperry.");
-        	}
-        	if (randomIntB == 3 && entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("You think thats enough to energize the bunny...shake failure.");
-        	}
-        	if (randomIntB == 4 && entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny appears to be mocking you.");
-        	}
-        	if (randomIntB == 5 && entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny does a little impression of you, shaking his paw then sniggers.");
-        	}
-        	if (randomIntB == 6 && entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny looks puzzled for a second then throws up.");
-        	}
-        	if (randomIntB == 7 && entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny seems to twitch its nose in threatening manner.");
-        	}
-        	if (randomIntB == 8){ 
-        		if (entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("the bunny keels over and dies");
-        	    }else{itemstack.stackSize --;
-        		entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.bunnyd,1));
-        		Sounds.BUNNY_OWW.onEntityPlay(world, entityplayer, 1, 1);}     		
-        	}
-        	if (randomIntB == 9 && entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("A small charge builds but earths itself almost immediatly.");
-        	}
-        	if (randomIntB == 10 && entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("All that happens is your wrist aches a little.");
-        	}
-        	if (randomIntB == 11 && entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny winks at you...wait no..its mooning you.");
-        	}
-        	if (randomIntB == 12 && entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("I cant repeat what the bunny is doing now!");
-        	}
-        	if (randomIntB == 13 && entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny appears to be making a crude gesture with its paws...oh now really that is rude!");
-        	}
-        	if (randomIntB == 14 && entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("The bunny is doing a little jig..oh no wait i think thats a fit. hop your proud of yourself.");
-        	}
-        	if (randomIntB == 15 && entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("Oh my thats not good, it didnt give it enough static charge but it did fluff up its furr a bit.");
-        	}
-        	if (randomIntB == 16){ if (entityplayer.worldObj.isRemote){
-        		Minecraft.getMinecraft().thePlayer.addChatMessage("It bites you and wont seem to let go.");
-        	}else{entityplayer.attackEntityFrom(DamageSource.generic, 1.0F);}
-        	}
-        	
-    	}*/
-	 
-    	
     
 	@Override
 	@SideOnly(Side.CLIENT)
@@ -188,18 +106,86 @@ public class ItemBunnyA extends Item {
 	public Object bunnyShakeFailHandler(int ID,ItemStack itemstack, EntityPlayer player, World world){
 		switch(ID){
 		case 0:
-			System.out.println("1 " + player + " id :" + ID + " itemstack :" + itemstack + "world :"+ world);
-			CommonProxy.chatHandler(player, "test");
+			CommonProxy.chatHandler(player, "A small charge builds but earths itself almost immediatly.");
 			break;
 		case 1:
-			System.out.println("2 " + player + " id :" + ID + " itemstack :" + itemstack + "world :"+ world);
-			CommonProxy.chatHandler(player, "test2");
+			CommonProxy.chatHandler(player, "Oh my thats not good, it didnt give it enough static charge but it did fluff up its furr a bit.");
 			break;
 		case 2:
-			System.out.println("3 " + player + " id :" + ID + " itemstack :" + itemstack + "world :"+ world);
-			CommonProxy.chatHandler(player, "test3");
+			CommonProxy.chatHandler(player, "The bunny is doing a little jig..oh no wait i think thats a fit. hop your proud of yourself.");
+			break;
+		case 3:
+			CommonProxy.chatHandler(player, "It bites you and wont seem to let go.");
+			player.attackEntityFrom(DamageSource.generic, 1.0F);
+			break;
+		case 4:
+			CommonProxy.chatHandler(player, "The bunny appears to be making a crude gesture with its paws...oh now really that is rude!");
+			break;
+		case 5:
+			CommonProxy.chatHandler(player, "I cant repeat what the bunny is doing now!");
+			break;
+		case 6:
+			CommonProxy.chatHandler(player, "The bunny winks at you...wait no..its mooning you.");
+			break;
+		case 7:
+			CommonProxy.chatHandler(player, "All that happens is your wrist aches a little.");
+			break;
+		case 8:
+			CommonProxy.chatHandler(player, "The bunny keels over and dies");
+			player.destroyCurrentEquippedItem();
+			player.entityDropItem(new ItemStack(Items.bunnyd), 1);
+			Sounds.BUNNY_OWW.onEntityPlay(world, player, 1, 1);
+			break;
+		case 9:
+			CommonProxy.chatHandler(player, "The bunny seems to twitch its nose in threatening manner.");
+			break;
+		case 10:
+			CommonProxy.chatHandler(player, "The bunny seems to twitch its nose in threatening manner.");
+			break;
+		case 11:
+			CommonProxy.chatHandler(player, "The bunny looks puzzled for a second then throws up.");
+			break;
+		case 12:
+			CommonProxy.chatHandler(player, "The bunny does a little impression of you, shaking his paw then sniggers.");
+			break;
+		case 13:
+			CommonProxy.chatHandler(player, "The bunny appears to be mocking you.");
+			break;
+		case 14:
+			CommonProxy.chatHandler(player, "You think thats enough to energize the bunny...shake failure.");
+			break;
+		case 15:
+			CommonProxy.chatHandler(player, "The bunny blows you a rasperry.");
+			break;
+		case 16:
+			CommonProxy.chatHandler(player, "The bunny just stares back at you.");
+			break;
+		case 17:
+			CommonProxy.chatHandler(player, "You failed to shake the bunny enough to energize it.");
+			break;
+		case 18:
+			CommonProxy.chatHandler(player, "The bunny looks you up and down and growls, i dont think he liked that");
+			break;
+		case 19:
+			CommonProxy.chatHandler(player, "Awww bless he is head banging to some unheard music....or is that whiplash?");
+			break;
+		case 20:
+			CommonProxy.chatHandler(player, "Can bunnys be staticly charged? really? if so you may need to try harder.");
+			break;
+		case 21:
+			CommonProxy.chatHandler(player, "The bunny looks at you, you cant help feeling that its disapointed in you.");
+			break;
+		case 22:
+			CommonProxy.chatHandler(player, "The bunny shakes its head and writes you a message..it says 'i pitty you' ");
+			break;
+		case 23:
+			CommonProxy.chatHandler(player, "The bunny straightens its furr and slaps you across the face");
+			break;
+		case 24:
+			CommonProxy.chatHandler(player, "");
 			break;
 		}
+		
 		return null;
 		
 	}
