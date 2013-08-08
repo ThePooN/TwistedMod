@@ -5,6 +5,7 @@ import java.util.Random;
 import com.mrgreaper.twisted.TwistedMod;
 import com.mrgreaper.twisted.client.sounds.Sounds;
 import com.mrgreaper.twisted.config.configInfo;
+import com.mrgreaper.twisted.proxies.CommonProxy;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -76,23 +77,27 @@ public class ItemBunnyA extends Item {
 
 	
 	
-	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)
-    {
+	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer){
 		if (!entityplayer.worldObj.isRemote){//we only want to do this on the server side or it gets ...interesting
 		Random randomGenerator = new Random();
     	//int randomInt = randomGenerator.nextInt(configInfo.BUNNYSTATICCHANCE);
-    	int randomInt = randomGenerator.nextInt(1);
+    	int randomInt = randomGenerator.nextInt(30);
     	if (randomInt == 0){
     		//ok so check if its o out of what ever is set in our bunnystaticchance..if it is, kill the live bunny and replace it with a static one
     		entityplayer.destroyCurrentEquippedItem(); //lets kill the bunny in thier hands mooooo ha ha ha ha ha haaa
     		if (configInfo.DEBUG) { System.out.println("random number on bunny right click is "+ randomInt);//if debug is on lets look at that number :)
-    		entityplayer.entityDropItem(new ItemStack(Items.bunnye), 1);
-    		 		
     		}
+    		entityplayer.entityDropItem(new ItemStack(Items.bunnye), 1);
+    		Sounds.BUNNY_ELECTRIC.onEntityPlay(world, entityplayer, 1, 1); // new sound test
+    		}else{
+    			int randomInt2 = randomGenerator.nextInt(3);
+    			bunnyShakeFailHandler(randomInt2, itemstack, entityplayer, world);
+    		}
+		} 
+		return itemstack;}
     		
     		
-    	}
-    	}
+    	
 		
 		
 		//old method bellow
@@ -170,13 +175,32 @@ public class ItemBunnyA extends Item {
         	
     	}*/
 	 
-    	return itemstack;
-    }
+    	
+    
 	@Override
 	@SideOnly(Side.CLIENT)
 	//here is where we add the textures etc, has to be client side ofcourse
 	public void registerIcons(IconRegister register) {
 		itemIcon = register.registerIcon(ItemInfo.TEXTURE_LOCATION + ":" + ItemInfo.BUNNYA_ICON);
+		
+	}
+	
+	public Object bunnyShakeFailHandler(int ID,ItemStack itemstack, EntityPlayer player, World world){
+		switch(ID){
+		case 0:
+			System.out.println("1 " + player + " id :" + ID + " itemstack :" + itemstack + "world :"+ world);
+			CommonProxy.chatHandler(player, "test");
+			break;
+		case 1:
+			System.out.println("2 " + player + " id :" + ID + " itemstack :" + itemstack + "world :"+ world);
+			CommonProxy.chatHandler(player, "test2");
+			break;
+		case 2:
+			System.out.println("3 " + player + " id :" + ID + " itemstack :" + itemstack + "world :"+ world);
+			CommonProxy.chatHandler(player, "test3");
+			break;
+		}
+		return null;
 		
 	}
 
