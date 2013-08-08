@@ -2,6 +2,8 @@ package com.mrgreaper.twisted.items;
 
 import java.util.Random;
 
+import appeng.api.Materials;
+
 import com.mrgreaper.twisted.TwistedMod;
 import com.mrgreaper.twisted.client.sounds.Sounds;
 import com.mrgreaper.twisted.config.configInfo;
@@ -70,6 +72,8 @@ public class ItemBunnyA extends Item {
 	
 	
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer){
+		//ItemStack.copyItemStack(Materials.matQuartz);
+		entityplayer.entityDropItem(ItemStack.copyItemStack(Materials.matQuartz), 1);//test code will change when more awake
 		if (!entityplayer.worldObj.isRemote){//we only want to do this on the server side or it gets ...interesting
 		Random randomGenerator = new Random();
     	int randomInt = randomGenerator.nextInt(configInfo.BUNNYSTATICCHANCE);
