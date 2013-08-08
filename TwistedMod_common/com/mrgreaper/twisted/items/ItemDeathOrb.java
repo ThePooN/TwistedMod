@@ -22,47 +22,33 @@ public class ItemDeathOrb extends Item {
 		super(id);;
 		setCreativeTab(TwistedMod.tabTwisted);
 		setUnlocalizedName(ItemInfo.DEATHORB_UNLOCALIZED_NAME);
+		setMaxStackSize(1);
 	}
 	
 	 //@SideOnly(Side.CLIENT)
 	    public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)
 	    {
-	    	int x = entityplayer.serverPosX;
-	    	int y = entityplayer.serverPosY;
-	    	int z = entityplayer.serverPosZ;
 	    	if (configInfo.DEBUG){System.out.println(itemstack.stackSize + " " + itemstack);}
-	    	itemstack.stackSize --;
+	    	entityplayer.destroyCurrentEquippedItem();//kills the stack 
 	    	if (configInfo.DEBUG){System.out.println(itemstack.stackSize + " " + itemstack);}
 	    	if (!entityplayer.worldObj.isRemote){
 	    		Sounds.DEATH_ORB_LAUNCH.onEntityPlay(world, entityplayer, 1, 1);
 	    	}
 	      	Random randomGenerator = new Random();
 	    	int randomInt = randomGenerator.nextInt(3);
-	    	if (randomInt == 0){
+	    	switch(randomInt){//changed from if to switch to make it neater
+	        case 0:
 	    	    entityplayer.entityDropItem(new ItemStack(Items.balloonr), 1);
-	    	    }
-	    	if (randomInt == 1){
+	    	   break;
+	        case 1:
 		    	entityplayer.entityDropItem(new ItemStack(Items.orphanleg), 1);
-		    	}
-	    	if (randomInt == 2){
+		    	break;
+	        case 2:
 		    	entityplayer.entityDropItem(new ItemStack(Items.orphantear), 1);
-		    	}
+		    	break;
+	    	}
 	    	return itemstack;
 	    }
-
-	
-	
-/*	hmm this is one way i can do it but then it only trigures when right clicking a block... need a new method	
- * @Override
-	    public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ){
-			if(!world.isRemote)
-	    	{
-	    		System.out.println("itemstack : " + itemstack + "entity player : " + entityplayer + "world : " + world + " X: " + x + " Y: " + y + " z: " + z + " side: " + side + "hitX : " + hitX + "hitY : " + hitY + "hitZ : " + hitZ);
-	    	}
-	    	
-	    	return false;
-	    }*/
-		
 		
 		
 		@Override

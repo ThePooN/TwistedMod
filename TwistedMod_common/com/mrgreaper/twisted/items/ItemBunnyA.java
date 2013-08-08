@@ -35,9 +35,6 @@ public class ItemBunnyA extends Item {
 	          //not too much of an issue in this circumstance but i need to find what went wrong for the future.
 	          // world.playSoundAtEntity may be the key but so far not easy to set up lol
 	public void onCreated(ItemStack itemStack, World world, EntityPlayer player) {
-		//int playerX = (int) Minecraft.getMinecraft().thePlayer.lastTickPosX;
-		//int playerY = (int) Minecraft.getMinecraft().thePlayer.lastTickPosY;
-		//int playerZ = (int) Minecraft.getMinecraft().thePlayer.lastTickPosZ;
 		int playerX = (int) player.prevPosX;
 		int playerY = (int) player.prevPosY;
 		int playerZ = (int) player.prevPosZ;
@@ -48,23 +45,18 @@ public class ItemBunnyA extends Item {
 			if (configInfo.DEBUG){System.out.println("the random number was "+randomInt + "the entity was " + player + " theplayer :" + Minecraft.getMinecraft().thePlayer);}
 			if (randomInt == 0){
 			      Sounds.CREATED_MONSTER.onEntityPlay(world, player, 1, 1); //test of onentity play of sound server side so that all hear it
-				//Sounds.CREATED_MONSTER.play (playerX ,playerY, playerZ, 150, 1);
 			}
 			if (randomInt == 1){
 				Sounds.BUNNY_RELEASE.onEntityPlay(world, player, 1, 1);
-				//Sounds.BUNNY_RELEASE.play (playerX ,playerY, playerZ, 150, 1);
 				}
 			if (randomInt == 2){
 				Sounds.BUNNY_LITTLE.onEntityPlay(world, player, 1, 1);
-				//Sounds.BUNNY_LITTLE.play (playerX ,playerY, playerZ, 150, 1);
 				}
 			if (randomInt == 3){
 				Sounds.BUNNY_EXP.onEntityPlay(world, player, 1, 1);
-				//Sounds.BUNNY_EXP.play (playerX ,playerY, playerZ, 150, 1);
 				}
 			if (randomInt == 4){
 				Sounds.BUNNY_RESSISTANCE.onEntityPlay(world, player, 1, 1);
-				//Sounds.BUNNY_RESSISTANCE.play (playerX ,playerY, playerZ, 150, 1);
 				}
 		}else{Minecraft.getMinecraft().thePlayer.addChatMessage("Dont let The evil vile creature go free!");}
 	}
@@ -104,6 +96,8 @@ public class ItemBunnyA extends Item {
 	}
 	
 	public Object bunnyShakeFailHandler(int ID,ItemStack itemstack, EntityPlayer player, World world){
+		String name = player.getEntityName();
+		if (configInfo.DEBUG){System.out.println(name);}
 		switch(ID){
 		case 0:
 			CommonProxy.chatHandler(player, "A small charge builds but earths itself almost immediatly.");
@@ -176,7 +170,7 @@ public class ItemBunnyA extends Item {
 			CommonProxy.chatHandler(player, "The bunny looks at you, you cant help feeling that its disapointed in you.");
 			break;
 		case 22:
-			CommonProxy.chatHandler(player, "The bunny shakes its head and writes you a message..it says 'i pitty you' ");
+			CommonProxy.chatHandler(player, "The bunny shakes its head and writes you a message..it says 'i pitty you " + name + " ' ");
 			break;
 		case 23:
 			CommonProxy.chatHandler(player, "The bunny straightens its furr and slaps you across the face");
