@@ -33,7 +33,7 @@ public class ItemBunnyE extends ItemElectric{
 	@Override
 	public void onCreated(ItemStack itemStack, World world, EntityPlayer par3EntityPlayer)
 	{
-		this.setElectricity(itemStack, 100000);
+		this.setElectricity(itemStack, 1000000);
 		System.out.println("have i been called? ");
 	}
 	    
@@ -48,6 +48,6 @@ public class ItemBunnyE extends ItemElectric{
 	@Override
 	public float getMaxElectricityStored(ItemStack theItem) {
 	// TODO Auto-generated method stub
-	return 100000;
+	return 1000000000;
 	}
 }

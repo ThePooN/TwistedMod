@@ -42,7 +42,7 @@ public class ConfigHandler {
 	    configInfo.SCRAFT = config.get(Configuration.CATEGORY_GENERAL, configInfo.SCRAFT_KEY, true).getBoolean(true);
 	    configInfo.APPENG = config.get(Configuration.CATEGORY_GENERAL, configInfo.APPENG_KEY, true).getBoolean(true);
 	    configInfo.IC2HELPER= config.get(Configuration.CATEGORY_GENERAL, configInfo.IC2HELPER_KEY, true).getBoolean(true);
-		
+		configInfo.EASYMODE= config.get(Configuration.CATEGORY_GENERAL, configInfo.EASYMODE_KEY, true).getBoolean(true);
 	    
 	    config.save();
 	}

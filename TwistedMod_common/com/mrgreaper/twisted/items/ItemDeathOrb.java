@@ -38,13 +38,13 @@ public class ItemDeathOrb extends Item {
 	    	int randomInt = randomGenerator.nextInt(3);
 	    	switch(randomInt){//changed from if to switch to make it neater
 	        case 0:
-	    	    entityplayer.entityDropItem(new ItemStack(Items.balloonr), 1);
+	    	    if (!entityplayer.worldObj.isRemote){entityplayer.entityDropItem(new ItemStack(Items.balloonr), 1);}
 	    	   break;
 	        case 1:
-		    	entityplayer.entityDropItem(new ItemStack(Items.orphanleg), 1);
+	        	if (!entityplayer.worldObj.isRemote){entityplayer.entityDropItem(new ItemStack(Items.orphanleg), 1);}
 		    	break;
 	        case 2:
-		    	entityplayer.entityDropItem(new ItemStack(Items.orphantear), 1);
+	        	if (!entityplayer.worldObj.isRemote){entityplayer.entityDropItem(new ItemStack(Items.orphantear), 1);}
 		    	break;
 	    	}
 	    	return itemstack;
