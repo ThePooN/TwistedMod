@@ -27,7 +27,12 @@ public class ContainerRebunnyator  extends Container{
 				addSlotToContainer(new Slot(invPlayer, x + y * 9 + 9, 8 + 18 * x,72 + y* 18));
 			}
 		}
+		addSlotToContainer(new SlotBunnyD(rebunnyator, 0, 8 ,17));// ok so lets add our unique slots container , slot id , Xcords, Ycords 
+		addSlotToContainer(new SlotOrphanTear(rebunnyator, 1, 44 ,17));
+		addSlotToContainer(new Slot(rebunnyator, 2, 138 ,17)); //this will be the output one
 	}
+	
+	
 	@Override
 	public boolean canInteractWith(EntityPlayer entityplayer) {
 		return rebunnyator.isUseableByPlayer(entityplayer);

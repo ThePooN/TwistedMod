@@ -1,6 +1,7 @@
 package com.mrgreaper.twisted.client.interfaces;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
@@ -35,6 +36,26 @@ public class GuiRebunnyator extends GuiContainer{
 		
 	}
 	
+	@Override // for adding text to the gui
+	protected void drawGuiContainerForegroundLayer(int x, int y){ //add text to the gui
+		fontRenderer.drawString("ReBunnyAtor",8 ,6,0x404040); // text ,xcords,ycords, colour
+	}
+	
+	@Override // adding a button
+	public void initGui(){
+		super.initGui();
+		buttonList.clear(); //clear the old list of buttons to make sure we donet get them again..hmmm wierd
+		
+		buttonList.add(new GuiButton(0, guiLeft+ 100, guiTop +40, 60,20,"test")); // adds the button id, xlocation reletive to gui top, y location likewise releative, size of buton lenghth,size of button width, txt on button
+	}
+	
+	@Override
+	protected void actionPerformed(GuiButton button){
+		if (button.id == 0) { //the id of the button so lets see if its clicked
+			System.out.println("clicketyclcik"); // if it is lets print some text
+		}
+		
+	}
 	
 
 }

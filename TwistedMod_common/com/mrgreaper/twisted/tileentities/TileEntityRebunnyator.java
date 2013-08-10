@@ -102,7 +102,7 @@ public class TileEntityRebunnyator extends TileEntity implements IInventory{ //t
 		NBTTagList items = new NBTTagList();
 		
 		for (int i = 0; i < getSizeInventory(); i++){ //now lets read the inventory of the tile entity
-			
+			                                          // for when i get stuck or forget, this is explained best here http://www.youtube.com/watch?feature=player_detailpage&v=UpHauh6gCT4&t=1042  
 			ItemStack stack = getStackInSlot(i); //lets get the stacks in each slot
 			
 			if (stack != null){ //lets make sure the slot is NOT empty
