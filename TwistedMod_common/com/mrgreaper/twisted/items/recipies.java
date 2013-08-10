@@ -57,7 +57,7 @@ if (configInfo.EASYMODE){GameRegistry.addRecipe(new ItemStack(Items.bunnya),//ou
 						"DRD",
 						
 						'D', Item.diamond, //items used in the above list
-						'B', Items.bunnya, 
+						'B', Items.bunnyd, 
 						'T', Items.orphantear,
 						'R', Item.redstone 
 					 });}

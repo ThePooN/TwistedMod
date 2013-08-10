@@ -18,7 +18,7 @@ public class ItemBunnyE extends ItemElectric{
 		setCreativeTab(TwistedMod.tabTwisted);
 		setMaxStackSize(1);
 		setUnlocalizedName(ItemInfo.BUNNYE_UNLOCALIZED_NAME);
-		//setMaxDamage(1000);
+		//setMaxDamage(10);
 		setNoRepair();
 	}
 	//this.setElectricity(itemstack, 10000);
@@ -48,6 +48,6 @@ public class ItemBunnyE extends ItemElectric{
 	@Override
 	public float getMaxElectricityStored(ItemStack theItem) {
 	// TODO Auto-generated method stub
-	return 1000000000;
+	return 100000000;
 	}
 }
