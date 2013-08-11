@@ -1,8 +1,10 @@
 package com.mrgreaper.twisted.proxies;
 
 import java.util.EnumSet;
+import java.util.Random;
 
 import com.mrgreaper.twisted.client.sounds.Sounds;
+import com.mrgreaper.twisted.config.configInfo;
 import com.mrgreaper.twisted.items.Items;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -25,9 +27,15 @@ public class ServerTickHandler implements ITickHandler {
 			//System.out.println(itemstack);
 			
 			if (itemstack.getItem() == Items.bunnye && !sound){
-				//here needs to go a random generater and 3 or 4 different sound effects for the bunny begging for death :)
-				Sounds.BUNNY_OWW.onEntityPlay(player.worldObj, player, 1, 1);//tempory ssound 
-				sound = true;
+				//here needs to go a random generator and 3 or 4 different sound effects for the bunny begging for death :)
+				Random randomGenerator = new Random();
+			   	int randomInt = randomGenerator.nextInt(5);
+		    	if (randomInt == 0){Sounds.BUNNY_OWW.onEntityPlay(player.worldObj, player, 1, 1);}//tempory sound 
+		    	if (randomInt == 1){Sounds.BUNNY_OWW.onEntityPlay(player.worldObj, player, 1, 1);}
+		    	if (randomInt == 2){Sounds.BUNNY_OWW.onEntityPlay(player.worldObj, player, 1, 1);}
+		    	if (randomInt == 3){Sounds.BUNNY_OWW.onEntityPlay(player.worldObj, player, 1, 1);}
+		    	if (randomInt == 4){Sounds.BUNNY_OWW.onEntityPlay(player.worldObj, player, 1, 1);}
+		    	sound = true;
 			}
 			if (itemstack.getItem() != Items.bunnye){
 				sound = false;

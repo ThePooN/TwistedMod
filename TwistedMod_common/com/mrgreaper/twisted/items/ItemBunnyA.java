@@ -67,12 +67,12 @@ public class ItemBunnyA extends Item {
 	     return stack;
 	}*/
 
-	
+	boolean disabler;
 	
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer){
 		//ItemStack.copyItemStack(Materials.matQuartz);
 		//entityplayer.entityDropItem(ItemStack.copyItemStack(Materials.matQuartz), 1);//test code will change when more awake
-		if (!entityplayer.worldObj.isRemote){//we only want to do this on the server side or it gets ...interesting
+		if (!entityplayer.worldObj.isRemote && !disabler){//we only want to do this on the server side or it gets ...interesting
 		Random randomGenerator = new Random();
     	int randomInt = randomGenerator.nextInt(configInfo.BUNNYSTATICCHANCE);
     	if (randomInt == 0){
@@ -85,6 +85,14 @@ public class ItemBunnyA extends Item {
     		}else{
     			int randomInt2 = randomGenerator.nextInt(24);
     			bunnyShakeFailHandler(randomInt2, itemstack, entityplayer, world);
+    			disabler = true;
+    			try {
+					Thread.sleep(6200);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+    			disabler = false;
     		}
 		} 
 		return itemstack;}
