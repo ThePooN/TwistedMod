@@ -1,11 +1,9 @@
 package com.mrgreaper.twisted;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 import com.mrgreaper.twisted.blocks.Blocks;
-
 import com.mrgreaper.twisted.client.interfaces.GuiHandler;
 import com.mrgreaper.twisted.config.ConfigHandler;
 import com.mrgreaper.twisted.config.configInfo;
@@ -13,8 +11,8 @@ import com.mrgreaper.twisted.entities.Entities;
 import com.mrgreaper.twisted.items.Items;
 import com.mrgreaper.twisted.items.recipies;
 import com.mrgreaper.twisted.network.ModInformation;
+import com.mrgreaper.twisted.network.PacketHandler;
 import com.mrgreaper.twisted.proxies.CommonProxy;
-
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -28,7 +26,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod( name = ModInformation.NAME, modid = ModInformation.ID, version = ModInformation.VERSION)
 
-@NetworkMod( clientSideRequired = true, serverSideRequired =false )
+@NetworkMod(channels = {ModInformation.CHANNEL}, clientSideRequired = true, serverSideRequired =false, packetHandler = PacketHandler.class )
 
 
 public class TwistedMod {
@@ -64,6 +62,7 @@ public void preInit(FMLPreInitializationEvent event){
 	
     proxy.initSounds();
     proxy.initRenderers();
+    proxy.registerServerTickHandler();
 }
 
 @EventHandler

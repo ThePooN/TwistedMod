@@ -2,11 +2,14 @@ package com.mrgreaper.twisted.items;
 
 import com.mrgreaper.twisted.TwistedMod;
 
+import cpw.mods.fml.common.network.Player;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import universalelectricity.core.item.ItemElectric;
@@ -43,11 +46,10 @@ public class ItemBunnyE extends ItemElectric{
 	public void registerIcons(IconRegister register) {
 	itemIcon = register.registerIcon(ItemInfo.TEXTURE_LOCATION + ":" + ItemInfo.BUNNYE_ICON);
 	}
-
-
+   
 	@Override
 	public float getMaxElectricityStored(ItemStack theItem) {
 	// TODO Auto-generated method stub
-	return 100000000;
+	return 1000000;
 	}
 }
