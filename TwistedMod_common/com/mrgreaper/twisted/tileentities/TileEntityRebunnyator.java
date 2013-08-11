@@ -132,5 +132,17 @@ public class TileEntityRebunnyator extends TileEntity implements IInventory{ //t
 	}
 }
 	}
+
+	public void recieveButtonEvent(byte buttonId) {
+		System.out.println("button id : " + buttonId);
+		switch(buttonId){
+			case 0:
+				System.out.println("the button with button id : " + buttonId + " was pressed.");
+				
+				break;
+		}
+	
+		
+	}
 }
 

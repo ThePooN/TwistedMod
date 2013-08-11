@@ -8,6 +8,7 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
+import com.mrgreaper.twisted.network.PacketHandler;
 import com.mrgreaper.twisted.tileentities.TileEntityRebunnyator;
 
 import cpw.mods.fml.relauncher.Side;
@@ -53,6 +54,7 @@ public class GuiRebunnyator extends GuiContainer{
 	protected void actionPerformed(GuiButton button){
 		if (button.id == 0) { //the id of the button so lets see if its clicked
 			System.out.println("clicketyclcik"); // if it is lets print some text
+			PacketHandler.sendButtonPacket((byte)button.id); //send the button id to the packet and let the server know the player hit the button
 		}
 		
 	}

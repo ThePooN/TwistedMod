@@ -1,13 +1,21 @@
 package com.mrgreaper.twisted.network;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+
 import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteStreams;
+import com.mrgreaper.twisted.client.interfaces.ContainerRebunnyator;
+import com.mrgreaper.twisted.tileentities.TileEntityRebunnyator;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.Container;
 import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet250CustomPayload;
 import cpw.mods.fml.common.network.IPacketHandler;
+import cpw.mods.fml.common.network.PacketDispatcher;
 import cpw.mods.fml.common.network.Player;
 
 public class PacketHandler implements IPacketHandler {
@@ -15,13 +23,38 @@ public class PacketHandler implements IPacketHandler {
 	public void onPacketData(INetworkManager manager, Packet250CustomPayload packet, Player player) {
 		ByteArrayDataInput reader = ByteStreams.newDataInput(packet.data);
 		
-		int entityId = reader.readInt();
-
 		EntityPlayer entityPlayer = (EntityPlayer)player;
-		Entity entity = entityPlayer.worldObj.getEntityByID(entityId);//		Entity entity = entityPlayer.worldObj.getEntityByID(entityId);
-//		if (entity != null && entity instanceof EntitySpaceship && entity.riddenByEntity == entityPlayer){ //check to see if the entity is an entity..and if it is mounted on the ship
-//			((EntitySpaceship)entity).doDrop();
+		
+		byte packetId = reader.readByte();
+	
+		System.out.println("packet id is : " + packetId);
+		switch (packetId) {
+		case 0:
+			byte buttonId = reader.readByte();
+			Container container = entityPlayer.openContainer; //the server will know that the player still has this open ..it sees the container as we automagicly get the players name via packet
+			if (container !=null && container instanceof ContainerRebunnyator){
+				TileEntityRebunnyator rebunnyator = ((ContainerRebunnyator)container).getRebunnyator();//here is where we get the tile entity name
+				rebunnyator.recieveButtonEvent(buttonId);
+			}
+			break;
+			
 		}
+		
+		}
+	public static void sendButtonPacket(byte id) {
+		ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+		DataOutputStream dataStream =new DataOutputStream(byteStream);
+		
+		try{
+			dataStream.writeByte((byte)0); //the id for this part of the packet
+			dataStream.writeByte(id);
+			
+			PacketDispatcher.sendPacketToServer(PacketDispatcher.getPacket(ModInformation.CHANNEL,  byteStream.toByteArray()));
+		    System.out.println(id);
+		}catch(IOException ex){
+			System.err.append("failed to send button packet");
+		}
+	}
 		
 
 }

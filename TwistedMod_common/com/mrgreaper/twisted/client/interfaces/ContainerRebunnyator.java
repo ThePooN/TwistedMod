@@ -42,6 +42,9 @@ public class ContainerRebunnyator  extends Container{
 		System.out.println("no shift clicking");
 		return null;
 	}
+	public TileEntityRebunnyator getRebunnyator(){//this method to hand the packet handler the tile entity when all it has is the container
+		return rebunnyator;
+	}
 }
 	
 	
