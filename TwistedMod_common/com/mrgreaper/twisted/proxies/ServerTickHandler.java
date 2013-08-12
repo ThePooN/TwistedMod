@@ -30,11 +30,11 @@ public class ServerTickHandler implements ITickHandler {
 				//here needs to go a random generator and 3 or 4 different sound effects for the bunny begging for death :)
 				Random randomGenerator = new Random();
 			   	int randomInt = randomGenerator.nextInt(5);
-		    	if (randomInt == 0 && configInfo.ELECBUNNYCRYS){Sounds.BUNNY_OWW.onEntityPlay(player.worldObj, player, 1, 1);}//tempory sound 
-		    	if (randomInt == 1 && configInfo.ELECBUNNYCRYS){Sounds.BUNNY_OWW.onEntityPlay(player.worldObj, player, 1, 1);}
-		    	if (randomInt == 2 && configInfo.ELECBUNNYCRYS){Sounds.BUNNY_OWW.onEntityPlay(player.worldObj, player, 1, 1);}
-		    	if (randomInt == 3 && configInfo.ELECBUNNYCRYS){Sounds.BUNNY_OWW.onEntityPlay(player.worldObj, player, 1, 1);}
-		    	if (randomInt == 4 && configInfo.ELECBUNNYCRYS){Sounds.BUNNY_OWW.onEntityPlay(player.worldObj, player, 1, 1);}
+		    	if (randomInt == 0 && configInfo.ELECBUNNYCRYS){Sounds.BUNNYBEG_A.onEntityPlay(player.worldObj, player, 1, 1);}//tempory sound 
+		    	if (randomInt == 1 && configInfo.ELECBUNNYCRYS){Sounds.BUNNYBEG_B.onEntityPlay(player.worldObj, player, 1, 1);}
+		    	if (randomInt == 2 && configInfo.ELECBUNNYCRYS){Sounds.BUNNYBEG_C.onEntityPlay(player.worldObj, player, 1, 1);}
+		    	if (randomInt == 3 && configInfo.ELECBUNNYCRYS){Sounds.BUNNYBEG_D.onEntityPlay(player.worldObj, player, 1, 1);}
+		    	if (randomInt == 4 && configInfo.ELECBUNNYCRYS){Sounds.BUNNYBEG_E.onEntityPlay(player.worldObj, player, 1, 1);}
 		    	sound = true;
 			}
 			if (itemstack.getItem() != Items.bunnye){
