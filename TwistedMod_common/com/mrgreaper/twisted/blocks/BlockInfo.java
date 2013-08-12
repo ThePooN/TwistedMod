@@ -35,5 +35,16 @@ public class BlockInfo {
 	public static final String STATICGEN_TOP = "rebunnyator_top"; //no texture made as yet
 	public static final String STATICGEN_SIDES = "rebunnyator"; //no texture made as yet
 	public static final String STATICGEN_TE_key = "staticgenTileEntity";
+	
+	
+	public static int ALARM_ID;
+	public static final String ALARM_KEY = "alarm";
+	public static final int ALARM_DEFAULT = 2152;
+	
+	public static final String ALARM_UNLOCALIZED_NAME ="alarmBlock";
+	public static final String ALARM_NAME = "Alarm speaker";
+	
+	public static final String ALARM_TEXTURE = "speaker";
+	
 
 }

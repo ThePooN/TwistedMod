@@ -29,7 +29,7 @@ public class ContainerRebunnyator  extends Container{
 		}
 		addSlotToContainer(new SlotBunnyD(rebunnyator, 0, 8 ,17));// ok so lets add our unique slots container , slot id , Xcords, Ycords 
 		addSlotToContainer(new SlotOrphanTear(rebunnyator, 1, 44 ,17));
-		addSlotToContainer(new Slot(rebunnyator, 2, 138 ,17)); //this will be the output one
+		addSlotToContainer(new SlotOutput(rebunnyator, 2, 138 ,17)); //this will be the output one
 	}
 	
 	

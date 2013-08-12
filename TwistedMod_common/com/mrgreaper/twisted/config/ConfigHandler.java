@@ -20,6 +20,7 @@ public class ConfigHandler {
 		BlockInfo.POISON_ID = config.getBlock(BlockInfo.POISON_KEY, BlockInfo.POISON_DEFAULT).getInt();
 		BlockInfo.REBUNNYATOR_ID = config.getBlock(BlockInfo.REBUNNYATOR_KEY, BlockInfo.REBUNNYATOR_DEFAULT).getInt();
 		BlockInfo.STATICGEN_ID = config.getBlock(BlockInfo.STATICGEN_KEY, BlockInfo.STATICGEN_DEFAULT).getInt();
+		BlockInfo.ALARM_ID = config.getBlock(BlockInfo.ALARM_KEY, BlockInfo.ALARM_DEFAULT).getInt();
 		
 		
 		//items

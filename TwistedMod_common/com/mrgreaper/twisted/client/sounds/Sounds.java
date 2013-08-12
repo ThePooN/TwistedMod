@@ -42,6 +42,20 @@ public enum Sounds {
 	SHAKEV("shakev"),
 	EVIL_LAUGH("laugh"),
 	DEATH_ORB_LAUNCH("deathOrbLaunch"),
+	ALARM_AIRRAIDA("alarm-airraidA"),
+	ALARM_AIRRAIDB("alarm-airraidB"),
+	ALARM_GENERICA("alarm-genericA"),
+	ALARM_GENERICB("alarm-genericB"),
+	ALARM_GENERICC("alarm-genericC"),
+	ALARM_GENERICD("alarm-genericD"),
+	ALARM_GENERICE("alarm-genericE"),
+	ALARM_GENERICF("alarm-genericF"),
+	ALARM_KLAXONA("alarm-klaxonA"),
+	ALARM_KLAXONB("alarm-klaxonB"),
+	ALARM_SCIFIA("alarm-scifiA"),
+	ALARM_SCIFIB("alarm-scifiB"),
+	ALARM_SCIFIC("alarm-scifiC"),
+	ALARM_SCIFID("alarm-scifiD"),
 	CREATED_MONSTER("monster");
 	
 	

@@ -10,9 +10,9 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class Blocks {
 	
 	public static BlockPoison poison;
-
-public static BlockRebunnyator rebunnyator;
-public static BlockStaticGen staticgen;
+    public static BlockRebunnyator rebunnyator;
+    public static BlockStaticGen staticgen;
+    public static BlockAlarm alarm;
 	
 	public static void init() {
 		
@@ -24,6 +24,9 @@ public static BlockStaticGen staticgen;
 		
 		staticgen = new BlockStaticGen(BlockInfo.STATICGEN_ID);
 		GameRegistry.registerBlock(staticgen, BlockInfo.STATICGEN_KEY); 
+		
+		alarm = new BlockAlarm(BlockInfo.ALARM_ID);
+		GameRegistry.registerBlock(alarm, BlockInfo.ALARM_KEY);
 	}
 	
 	
