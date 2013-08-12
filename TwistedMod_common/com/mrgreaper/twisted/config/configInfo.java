@@ -4,7 +4,7 @@ public class configInfo {
 	
 	public static int BUNNYSTATICCHANCE;
 	public static final String BUNNYSTATICCHANCE_KEY = "Bunny static chance 1: ";
-	public static final int BUNNYSTATICCHANCE_DEFAULT = 30;
+	public static final int BUNNYSTATICCHANCE_DEFAULT = 10;
     public static boolean DEBUG;
     public static final String DEBUG_KEY = "Debug mode? ";
     public static boolean EASYMODE;
@@ -19,4 +19,8 @@ public class configInfo {
     public static boolean IC2HELPER;
     public static final String IC2HELPER_KEY = "Ic2 helper enabled ?";
     public static boolean IC2Loaded;
+    public static boolean ELECBUNNYCRYS;
+    public static final String ELECBUNNYCRYS_KEY = "Enable electric bunny crys ?";
+    public static boolean SHAKESPEECH;
+    public static final String SHAKESPEECH_KEY = "Enable speech on shaking bunnys ? (may become annoying)";
 }

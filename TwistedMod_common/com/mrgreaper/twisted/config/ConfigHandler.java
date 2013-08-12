@@ -43,7 +43,8 @@ public class ConfigHandler {
 	    configInfo.APPENG = config.get(Configuration.CATEGORY_GENERAL, configInfo.APPENG_KEY, true).getBoolean(true);
 	    configInfo.IC2HELPER= config.get(Configuration.CATEGORY_GENERAL, configInfo.IC2HELPER_KEY, true).getBoolean(true);
 		configInfo.EASYMODE= config.get(Configuration.CATEGORY_GENERAL, configInfo.EASYMODE_KEY, true).getBoolean(true);
-	    
+	    configInfo.ELECBUNNYCRYS= config.get(Configuration.CATEGORY_GENERAL, configInfo.ELECBUNNYCRYS_KEY, true).getBoolean(true);
+	    configInfo.SHAKESPEECH= config.get(Configuration.CATEGORY_GENERAL, configInfo.SHAKESPEECH_KEY, true).getBoolean(true);
 	    config.save();
 	}
 
