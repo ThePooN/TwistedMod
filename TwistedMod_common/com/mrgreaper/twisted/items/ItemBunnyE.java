@@ -1,6 +1,8 @@
 package com.mrgreaper.twisted.items;
 
 import com.mrgreaper.twisted.TwistedMod;
+import com.mrgreaper.twisted.client.sounds.Sounds;
+import com.mrgreaper.twisted.config.configInfo;
 
 import cpw.mods.fml.common.network.Player;
 import cpw.mods.fml.relauncher.Side;
@@ -34,11 +36,18 @@ public class ItemBunnyE extends ItemElectric{
 	
 	
 	@Override
-	public void onCreated(ItemStack itemStack, World world, EntityPlayer par3EntityPlayer)
+	public void onCreated(ItemStack itemStack, World world, EntityPlayer EntityPlayer)
 	{
 		this.setElectricity(itemStack, 1000000);
 		System.out.println("have i been called? ");
 	}
+	
+	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer){
+		if (!entityplayer.worldObj.isRemote){
+			this.recharge(itemstack, configInfo.BUNNYSTATICCHARGE, true);
+			//Sounds.BUNNY_OWW.onEntityPlay(world, entityplayer, 1, 10);  //removed the sound as it could get annoying need some feedback to say there is a charge going into it hmmmm....added to the todo
+		}
+	return itemstack;}
 	    
     @Override
 	@SideOnly(Side.CLIENT)

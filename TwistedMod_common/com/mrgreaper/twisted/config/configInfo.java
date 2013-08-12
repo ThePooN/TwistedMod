@@ -5,6 +5,9 @@ public class configInfo {
 	public static int BUNNYSTATICCHANCE;
 	public static final String BUNNYSTATICCHANCE_KEY = "Bunny static chance 1: ";
 	public static final int BUNNYSTATICCHANCE_DEFAULT = 10;
+	public static int BUNNYSTATICCHARGE;
+	public static final String BUNNYSTATICCHARGE_KEY = "Bunny static charge per shake : ";
+	public static final int BUNNYSTATICCHARGE_DEFAULT = 10;
     public static boolean DEBUG;
     public static final String DEBUG_KEY = "Debug mode? ";
     public static boolean EASYMODE;
