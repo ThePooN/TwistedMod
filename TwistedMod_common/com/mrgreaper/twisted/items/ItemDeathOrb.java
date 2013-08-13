@@ -5,6 +5,8 @@ import java.util.Random;
 import com.mrgreaper.twisted.TwistedMod;
 import com.mrgreaper.twisted.client.sounds.Sounds;
 import com.mrgreaper.twisted.config.configInfo;
+import com.mrgreaper.twisted.entities.EntityBalloon;
+import com.mrgreaper.twisted.entities.EntityDeathOrb;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -26,7 +28,8 @@ public class ItemDeathOrb extends Item {
 	}
 	
 	 //@SideOnly(Side.CLIENT)
-	    public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)
+	//commented out for test
+	   /* public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)
 	    {
 	    	if (configInfo.DEBUG){System.out.println(itemstack.stackSize + " " + itemstack);}
 	    	entityplayer.destroyCurrentEquippedItem();//kills the stack 
@@ -48,8 +51,20 @@ public class ItemDeathOrb extends Item {
 		    	break;
 	    	}
 	    	return itemstack;
-	    }
-		
+	    }*/
+	@Override
+	public boolean onItemUseFirst(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ) {
+		if (!world.isRemote) {
+			world.spawnEntityInWorld(new EntityDeathOrb(world, x + 0.5, y + 1.5, z + 0.5));
+			
+			stack.stackSize--;
+			
+			return true;
+		}else{
+			return false;
+		}
+
+	}
 		
 		@Override
 		@SideOnly(Side.CLIENT)
