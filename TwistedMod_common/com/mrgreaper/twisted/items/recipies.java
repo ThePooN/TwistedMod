@@ -28,9 +28,9 @@ public static void registerRecipes() {
 				 });	*/	
 //my recipes
 GameRegistry.addRecipe(new ItemStack(Items.bunnyd),//output item
-		new Object[] { 	"D D",//crafting grid
-						" C ",
-						"D D",
+		new Object[] { 	"C C",//crafting grid
+						" D ",
+						"C C",
 						
 						'D', Block.dirt, //items used in the above list
 						'C', Item.carrot 
