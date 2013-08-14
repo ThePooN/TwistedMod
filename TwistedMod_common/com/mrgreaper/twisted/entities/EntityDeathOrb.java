@@ -18,7 +18,9 @@ public class EntityDeathOrb extends Entity {
 	private double startY;
 	private double targetY;
 	public int counter;
-	public int tone;
+	private float tone = 0F;
+	private float RA = 3F;
+	
 	
 	public EntityDeathOrb(World world, double x, double y, double z){
 		this(world);
@@ -40,28 +42,38 @@ public class EntityDeathOrb extends Entity {
 		nbttagcompound.setShort("Target", (short)targetY);
 	}
 	
-	public void onupdate() {
+	@Override
+	public void onUpdate() {
 		super.onUpdate();
 		
 		if (!worldObj.isRemote){
-			if (targetY == 0 ||Math.abs(posY - targetY) < 0.25){ //are we at the target?
-				targetY = startY + worldObj.rand.nextDouble()* 3; //ah yes then lets get a new target!
-				Sounds.DEATH_ORB_LAUNCH.onEntityPlay(worldObj, this, 1, (tone*0.5F));
-				tone ++;
+			
+			if (targetY == 0 || Math.abs(posY - targetY) < 0.25) { //are we at the target?
+				targetY = startY + worldObj.rand.nextDouble() * RA; //ah yes then lets get a new target!
+				Sounds.DEATH_ORB_LAUNCH.onEntityPlay(worldObj, this, 1, tone);
+				RA= RA - 0.1F;
+				tone = tone + 0.1F;
 				counter ++;
 				if (counter == 20){
+					tone = 1;
+					RA = 5F;
 					Random randomGenerator = new Random();
 			    	int randomInt = randomGenerator.nextInt(3);
+			    	Sounds.EVIL_LAUGHB.onEntityPlay(worldObj, this, 1, 1);
 			    	switch(randomInt){//changed from if to switch to make it neater
+			    	
 			        case 0:
 			    	    if (!this.worldObj.isRemote){this.entityDropItem(new ItemStack(Items.balloonr), 1);}
-			    	   break;
+			    	   this.setDead();
+			    	    break;
 			        case 1:
 			        	if (!this.worldObj.isRemote){this.entityDropItem(new ItemStack(Items.orphanleg), 1);}
-				    	break;
+			        	this.setDead();
+			        	break;
 			        case 2:
 			        	if (!this.worldObj.isRemote){this.entityDropItem(new ItemStack(Items.orphantear), 1);}
-				    	break;
+			        	this.setDead();
+			        	break;
 			    	}
 				}
 			}
@@ -69,7 +81,7 @@ public class EntityDeathOrb extends Entity {
 			if (posY < targetY){ //are we bellow the targe?
 				motionY= 0.05; //move up
 			}else{ //ah then we must be above the target
-				motionY = - 0.05; //move down
+				motionY = -0.05; //move down
 			}
 			
 		}

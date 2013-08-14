@@ -31,8 +31,8 @@ public class EntityBalloon extends Entity {
 		nbttagcompound.setShort("Start", (short)startY);
 		nbttagcompound.setShort("Target", (short)targetY);
 	}
-	
-	public void onupdate() {
+	@Override
+	public void onUpdate() {
 		super.onUpdate();
 		
 		if (!worldObj.isRemote){

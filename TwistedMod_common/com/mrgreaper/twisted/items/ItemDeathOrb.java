@@ -5,7 +5,6 @@ import java.util.Random;
 import com.mrgreaper.twisted.TwistedMod;
 import com.mrgreaper.twisted.client.sounds.Sounds;
 import com.mrgreaper.twisted.config.configInfo;
-import com.mrgreaper.twisted.entities.EntityBalloon;
 import com.mrgreaper.twisted.entities.EntityDeathOrb;
 
 import net.minecraft.block.Block;
