@@ -99,5 +99,8 @@ public class ModelDeathOrb extends ModelBase
     public ModelDeathOrb() {
     	modelDeathOrb = AdvancedModelLoader.loadModel("/assets/twisted/models/deathorb.obj");
     }
+    public void renderWavefront(){
+        modelDeathOrb.renderAll();
+    }
 
 }
