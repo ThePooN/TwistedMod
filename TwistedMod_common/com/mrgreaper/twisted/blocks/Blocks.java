@@ -13,6 +13,7 @@ public class Blocks {
     public static BlockRebunnyator rebunnyator;
     public static BlockStaticGen staticgen;
     public static BlockAlarm alarm;
+    public static BlockGeorgeSkull georgeskull;
 	
 	public static void init() {
 		
@@ -27,6 +28,10 @@ public class Blocks {
 		
 		alarm = new BlockAlarm(BlockInfo.ALARM_ID);
 		GameRegistry.registerBlock(alarm, BlockInfo.ALARM_KEY);
+		
+		georgeskull = new BlockGeorgeSkull(BlockInfo.GEORGESKULL_ID);
+		GameRegistry.registerBlock(georgeskull, BlockInfo.GEORGESKULL_KEY);
+		
 	}
 	
 	
@@ -37,6 +42,8 @@ public class Blocks {
 		//added by me bellow
 		LanguageRegistry.addName(rebunnyator, BlockInfo.REBUNNYATOR_NAME);
 		LanguageRegistry.addName(staticgen, BlockInfo.STATICGEN_NAME);
+		LanguageRegistry.addName(alarm, BlockInfo.ALARM_NAME);
+		LanguageRegistry.addName(georgeskull, BlockInfo.GEORGESKULL_NAME);
 	}
 	
 	public static void registerTileEntities() {

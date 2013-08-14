@@ -46,5 +46,12 @@ public class BlockInfo {
 	
 	public static final String ALARM_TEXTURE = "speaker";
 	
+	public static int GEORGESKULL_ID;
+	public static final String GEORGESKULL_KEY = "georgeskull";
+	public static final int GEORGESKULL_DEFAULT = 2153;
+	public static final String GEORGESKULL_UNLOCALIZED_NAME ="georgeSkull";
+	public static final String GEORGESKULL_NAME = "Skull of George";
+	public static final String GEORGESKULL_TEXTURE = "georgeskull"; // tempory this needs a model at the end
+	
 
 }
