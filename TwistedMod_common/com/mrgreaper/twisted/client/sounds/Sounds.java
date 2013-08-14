@@ -56,7 +56,8 @@ public enum Sounds {
 	ALARM_SCIFIB("alarm-scifiB"),
 	ALARM_SCIFIC("alarm-scifiC"),
 	ALARM_SCIFID("alarm-scifiD"),
-	CREATED_MONSTER("monster");
+	CREATED_MONSTER("monster"),
+	EXP_TRAIL("exp_trail");
 	
 	
 	public static final String SOUNDS_LOCATION = "twisted";

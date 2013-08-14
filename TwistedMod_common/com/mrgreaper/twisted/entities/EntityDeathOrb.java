@@ -59,7 +59,7 @@ public class EntityDeathOrb extends Entity {
 					RA = 5F;
 					Random randomGenerator = new Random();
 			    	int randomInt = randomGenerator.nextInt(3);
-			    	Sounds.EVIL_LAUGHB.onEntityPlay(worldObj, this, 1, 1);
+			    	Sounds.EXP_TRAIL.onEntityPlay(worldObj, this, 1, 1);
 			    	switch(randomInt){//changed from if to switch to make it neater
 			    	
 			        case 0:
