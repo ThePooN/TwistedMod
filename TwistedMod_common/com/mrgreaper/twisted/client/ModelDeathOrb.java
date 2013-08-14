@@ -1,11 +1,15 @@
 package com.mrgreaper.twisted.client;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraftforge.client.model.AdvancedModelLoader;
+import net.minecraftforge.client.model.IModelCustom;
 
 
-public class ModelDeathOrb extends ModelBase
+/*public class ModelDeathOrb extends ModelBase
 {
 	  //fields
 	    public ModelRenderer core;
@@ -85,15 +89,15 @@ public class ModelDeathOrb extends ModelBase
 	}
 
 
-
+*/
 //bellow failed attempt to use obj
-//@SideOnly(Side.CLIENT)
-//public class ModelDeathOrb extends ModelBase
-//{
-//    private IModelCustom modelDeathOrb;
-//    
-//    public ModelDeathOrb() {
-//    	modelDeathOrb = AdvancedModelLoader.loadModel("/assets/twisted/obj/test.obj");
-//    }
-//
-//}
+@SideOnly(Side.CLIENT)
+public class ModelDeathOrb extends ModelBase
+{
+    private IModelCustom modelDeathOrb;
+    
+    public ModelDeathOrb() {
+    	modelDeathOrb = AdvancedModelLoader.loadModel("/assets/twisted/models/deathorb.obj");
+    }
+
+}
