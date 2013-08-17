@@ -21,6 +21,7 @@ public class ConfigHandler {
 		BlockInfo.REBUNNYATOR_ID = config.getBlock(BlockInfo.REBUNNYATOR_KEY, BlockInfo.REBUNNYATOR_DEFAULT).getInt();
 		BlockInfo.STATICGEN_ID = config.getBlock(BlockInfo.STATICGEN_KEY, BlockInfo.STATICGEN_DEFAULT).getInt();
 		BlockInfo.ALARM_ID = config.getBlock(BlockInfo.ALARM_KEY, BlockInfo.ALARM_DEFAULT).getInt();
+		BlockInfo.GEORGESKULL_ID = config.getBlock(BlockInfo.GEORGESKULL_KEY, BlockInfo.GEORGESKULL_DEFAULT).getInt();
 		
 		
 		//items
@@ -46,7 +47,7 @@ public class ConfigHandler {
 	    configInfo.IC2HELPER= config.get(Configuration.CATEGORY_GENERAL, configInfo.IC2HELPER_KEY, true).getBoolean(true);
 		configInfo.EASYMODE= config.get(Configuration.CATEGORY_GENERAL, configInfo.EASYMODE_KEY, true).getBoolean(true);
 	    configInfo.ELECBUNNYCRYS= config.get(Configuration.CATEGORY_GENERAL, configInfo.ELECBUNNYCRYS_KEY, true).getBoolean(true);
-	    configInfo.SHAKESPEECH= config.get(Configuration.CATEGORY_GENERAL, configInfo.SHAKESPEECH_KEY, true).getBoolean(true);
+	    configInfo.SHAKESPEECH= config.get(Configuration.CATEGORY_GENERAL, configInfo.SHAKESPEECH_KEY, false).getBoolean(false);
 	    config.save();
 	}
 

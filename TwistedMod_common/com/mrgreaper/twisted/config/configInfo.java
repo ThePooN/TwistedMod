@@ -25,5 +25,5 @@ public class configInfo {
     public static boolean ELECBUNNYCRYS;
     public static final String ELECBUNNYCRYS_KEY = "Enable electric bunny crys ?";
     public static boolean SHAKESPEECH;
-    public static final String SHAKESPEECH_KEY = "Enable speech on shaking bunnys ? (may become annoying)";
+    public static final String SHAKESPEECH_KEY = "Enable speech on shaking bunnys ? (wip voice used)";
 }

@@ -57,6 +57,13 @@ public enum Sounds {
 	ALARM_SCIFIC("alarm-scifiC"),
 	ALARM_SCIFID("alarm-scifiD"),
 	CREATED_MONSTER("monster"),
+	SKULL_GIVESTICK("skull-givestick"),
+	SKULL_MAD("skull-mad"),
+	SKULL_TEAPOT("skull-teapot"),
+	SKULL_TAKE("skull_take"),
+	SKULL_PITY("skull-pity"),
+	SKULL_STING("skull-sting"),
+	SKULL_RULEWORLD("skull-ruleworld"),
 	EXP_TRAIL("exp_trail");
 	
 	
