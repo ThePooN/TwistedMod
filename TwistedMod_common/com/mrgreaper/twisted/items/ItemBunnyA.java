@@ -2,8 +2,6 @@ package com.mrgreaper.twisted.items;
 
 import java.util.Random;
 
-import appeng.api.Materials;
-
 import com.mrgreaper.twisted.TwistedMod;
 import com.mrgreaper.twisted.client.sounds.Sounds;
 import com.mrgreaper.twisted.config.configInfo;
