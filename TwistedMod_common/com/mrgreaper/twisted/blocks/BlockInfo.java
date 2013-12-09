@@ -53,5 +53,12 @@ public class BlockInfo {
 	public static final String GEORGESKULL_NAME = "Skull of George";
 	public static final String GEORGESKULL_TEXTURE = "georgeskull"; // tempory this needs a model at the end
 	
+	public static int SLAVEDBUNNY_ID; //the bunny speaker
+	public static final String SLAVEDBUNNY_KEY = "slavedbunny";
+	public static final int SLAVEDBUNNY_DEFAULT = 2154;
+	public static final String SLAVEDBUNNY_UNLOCALIZED_NAME ="slavedBunny";
+	public static final String SLAVEDBUNNY_NAME = "Enslaved Bunny";
+	public static final String SLAVEDBUNNY_TEXTURE = "slavedbunny";	
+	public static final String SLAVEDBUNNY_TE_key = "slavedbunnyTileEntity";
 
 }

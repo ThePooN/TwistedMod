@@ -3,7 +3,9 @@ package com.mrgreaper.twisted.blocks;
 
 
 import com.mrgreaper.twisted.tileentities.TileEntityRebunnyator;
+import com.mrgreaper.twisted.tileentities.TileEntitySlavedBunny;
 import com.mrgreaper.twisted.tileentities.TileEntityStaticGen;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -14,6 +16,7 @@ public class Blocks {
     public static BlockStaticGen staticgen;
     public static BlockAlarm alarm;
     public static BlockGeorgeSkull georgeskull;
+    public static BlockSlavedBunny slavedbunny;
 	
 	public static void init() {
 		
@@ -32,6 +35,9 @@ public class Blocks {
 		georgeskull = new BlockGeorgeSkull(BlockInfo.GEORGESKULL_ID);
 		GameRegistry.registerBlock(georgeskull, BlockInfo.GEORGESKULL_KEY);
 		
+		slavedbunny = new BlockSlavedBunny(BlockInfo.SLAVEDBUNNY_ID);
+		GameRegistry.registerBlock(slavedbunny, BlockInfo.SLAVEDBUNNY_KEY);
+		
 	}
 	
 	
@@ -44,10 +50,12 @@ public class Blocks {
 		LanguageRegistry.addName(staticgen, BlockInfo.STATICGEN_NAME);
 		LanguageRegistry.addName(alarm, BlockInfo.ALARM_NAME);
 		LanguageRegistry.addName(georgeskull, BlockInfo.GEORGESKULL_NAME);
+		LanguageRegistry.addName(slavedbunny, BlockInfo.SLAVEDBUNNY_NAME);
 	}
 	
 	public static void registerTileEntities() {
 		GameRegistry.registerTileEntity(TileEntityRebunnyator.class, BlockInfo.REBUNNYATOR_TE_key);
 		GameRegistry.registerTileEntity(TileEntityStaticGen.class, BlockInfo.STATICGEN_TE_key);
+		GameRegistry.registerTileEntity(TileEntitySlavedBunny.class, BlockInfo.SLAVEDBUNNY_TE_key);
 	}
 }

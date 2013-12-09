@@ -22,6 +22,7 @@ public class ConfigHandler {
 		BlockInfo.STATICGEN_ID = config.getBlock(BlockInfo.STATICGEN_KEY, BlockInfo.STATICGEN_DEFAULT).getInt();
 		BlockInfo.ALARM_ID = config.getBlock(BlockInfo.ALARM_KEY, BlockInfo.ALARM_DEFAULT).getInt();
 		BlockInfo.GEORGESKULL_ID = config.getBlock(BlockInfo.GEORGESKULL_KEY, BlockInfo.GEORGESKULL_DEFAULT).getInt();
+		BlockInfo.SLAVEDBUNNY_ID = config.getBlock(BlockInfo.SLAVEDBUNNY_KEY, BlockInfo.SLAVEDBUNNY_DEFAULT).getInt();
 		
 		
 		//items
