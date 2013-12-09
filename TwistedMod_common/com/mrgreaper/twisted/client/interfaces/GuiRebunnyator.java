@@ -31,7 +31,7 @@ public class GuiRebunnyator extends GuiContainer{
 	protected void drawGuiContainerBackgroundLayer(float f, int i, int j) {
 		GL11.glColor4f(1, 1, 1, 1); //resets the colours
 		
-		Minecraft.getMinecraft().func_110434_K().func_110577_a(texture); //assign the texture(get render engine bind texture
+		Minecraft.getMinecraft().getTextureManager().bindTexture(texture); //assign the texture(get render engine bind texture
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize); //draw a rectangle from the texture
 		
 		

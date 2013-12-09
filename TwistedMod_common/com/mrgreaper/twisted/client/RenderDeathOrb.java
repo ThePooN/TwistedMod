@@ -25,7 +25,7 @@ public class RenderDeathOrb extends Render{
 		 GL11.glPushMatrix(); //start tools
 		 GL11.glTranslatef((float)x,(float) y,(float) z); //this is where we draw the model at the location
 		 //GL11.glScalef(-1F, -1F, -1F); //this sets the scale
-		 func_110777_b(deathorb); //load the texture for the entity
+		 bindEntityTexture(deathorb); //load the texture for the entity
 		 
 		 //model.render(deathorb, 0F, 0F, 0F, 0F, 0F, 0.0625f);// first is the entity the 0f differ depending on what your rendering and the last part is the size (usualy mc models are huge so 0.0625f)
 		 model.renderWavefront();
@@ -42,8 +42,8 @@ public class RenderDeathOrb extends Render{
 	}
 
 	@Override
-	protected ResourceLocation func_110775_a(Entity entity) {
-		return texture;
+	protected ResourceLocation getEntityTexture(Entity entity) {
+	return texture;
 	}
 	
 

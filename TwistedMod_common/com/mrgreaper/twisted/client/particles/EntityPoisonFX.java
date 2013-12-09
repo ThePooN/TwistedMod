@@ -10,7 +10,7 @@ public class EntityPoisonFX extends EntityFX{
 	public EntityPoisonFX(World world, double x, double y, double z, double motionX, double motionY, double motionZ){
 		super(world, x, y, z, motionX, motionY, motionZ);
 		
-		func_110125_a(Blocks.poison.particleIcon);
+		//func_110125_a(Blocks.poison.particleIcon);  //this stopped working on 953, /msg mcpbot !gcm func_110125_a says it should be EntityFX.setParticleIcon but its not
 		
 		particleScale = 3; //size
 		particleAlpha = rand.nextFloat(); //is it solid ? 1 or transparent 0?

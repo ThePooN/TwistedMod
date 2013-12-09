@@ -23,6 +23,8 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import java.io.*;
+import com.sun.speech.freetts.*;
 
 @Mod( name = ModInformation.NAME, modid = ModInformation.ID, version = ModInformation.VERSION)
 
@@ -65,6 +67,7 @@ public void preInit(FMLPreInitializationEvent event){
     proxy.registerServerTickHandler();
 }
 
+
 @EventHandler
 public void load(FMLInitializationEvent event){
   Items.addNames();
@@ -76,6 +79,22 @@ public void load(FMLInitializationEvent event){
   Entities.init();
  // new GenerationHandeler();
   new GuiHandler();
+  
+  String VOICENAME="kevin16";
+
+  Voice voice;
+  VoiceManager vm= VoiceManager.getInstance();
+  voice=vm.getVoice(VOICENAME);
+
+  voice.allocate();
+  System.out.println( "speech test");
+  try{
+	 //voice.setPitch(80);
+  	voice.speak("eeek there be bunnys");
+  }catch(Exception e){	                
+	  System.out.println("Could use speech");
+  e.printStackTrace(System.err);}
+
 }
 
 @EventHandler
