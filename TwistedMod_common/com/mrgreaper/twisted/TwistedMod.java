@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 
 import com.mrgreaper.twisted.blocks.Blocks;
 import com.mrgreaper.twisted.client.interfaces.GuiHandler;
+import com.mrgreaper.twisted.client.sounds.SpeechHandler;
 import com.mrgreaper.twisted.config.ConfigHandler;
 import com.mrgreaper.twisted.config.configInfo;
 import com.mrgreaper.twisted.entities.Entities;
@@ -23,8 +24,6 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-import java.io.*;
-import com.sun.speech.freetts.*;
 
 @Mod( name = ModInformation.NAME, modid = ModInformation.ID, version = ModInformation.VERSION)
 
@@ -80,21 +79,7 @@ public void load(FMLInitializationEvent event){
  // new GenerationHandeler();
   new GuiHandler();
   
-  String VOICENAME="kevin16";
-
-  Voice voice;
-  VoiceManager vm= VoiceManager.getInstance();
-  voice=vm.getVoice(VOICENAME);
-
-  voice.allocate();
-  System.out.println( "speech test");
-  try{
-	 //voice.setPitch(80);
-  	voice.speak("eeek there be bunnys");
-  }catch(Exception e){	                
-	  System.out.println("Could use speech");
-  e.printStackTrace(System.err);}
-
+  SpeechHandler.speechSynth(null, null, 2, 10, 10, 10, "testing there is many bunnys here");
 }
 
 @EventHandler
