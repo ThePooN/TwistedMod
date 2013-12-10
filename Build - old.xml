@@ -22,8 +22,7 @@
         <!-- Copy your project to MCP-->
         <target name="prep">
                 <copy todir="${build.dir.development}\forge\mcp\src\minecraft">
-                        <fileset dir="${build.dir.development}\source\TwistedMod\TwistedMod_common">
-						</fileset>
+                        <fileset dir="${build.dir.development}\source\TwistedMod\TwistedMod_common" />
                 </copy>
         </target>
  
