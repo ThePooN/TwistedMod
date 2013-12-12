@@ -49,6 +49,7 @@ public class ConfigHandler {
 		configInfo.EASYMODE= config.get(Configuration.CATEGORY_GENERAL, configInfo.EASYMODE_KEY, true).getBoolean(true);
 	    configInfo.ELECBUNNYCRYS= config.get(Configuration.CATEGORY_GENERAL, configInfo.ELECBUNNYCRYS_KEY, true).getBoolean(true);
 	    configInfo.SHAKESPEECH= config.get(Configuration.CATEGORY_GENERAL, configInfo.SHAKESPEECH_KEY, false).getBoolean(false);
+	    configInfo.MAXENSLAVEDBUNNYRANGE= config.get(Configuration.CATEGORY_GENERAL, configInfo.MAXENSLAVEDBUNNYRANGE_KEY, configInfo.MAXENSLAVEDBUNNYRANGE_DEFAULT).getInt();
 	    config.save();
 	}
 

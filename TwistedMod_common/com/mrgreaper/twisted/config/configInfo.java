@@ -26,4 +26,7 @@ public class configInfo {
     public static final String ELECBUNNYCRYS_KEY = "Enable electric bunny crys ?";
     public static boolean SHAKESPEECH;
     public static final String SHAKESPEECH_KEY = "Enable speech on shaking bunnys ? (wip voice used)";
+    public static int MAXENSLAVEDBUNNYRANGE;
+    public static final String MAXENSLAVEDBUNNYRANGE_KEY = "Max range for enslaved bunny speach : ";
+    public static final int MAXENSLAVEDBUNNYRANGE_DEFAULT = 50;
 }

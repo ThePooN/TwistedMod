@@ -26,20 +26,25 @@ public class BlockSlavedBunny extends BlockContainer {
 		setStepSound(Block.soundMetalFootstep);
 		setUnlocalizedName(BlockInfo.SLAVEDBUNNY_UNLOCALIZED_NAME);
 		}
-	
 	@SideOnly(Side.CLIENT)
-	private Icon MachineIcon;
+	private Icon topIcon;
+	@SideOnly(Side.CLIENT)
+	private Icon sideIcon;
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister register){
-		MachineIcon = register.registerIcon(BlockInfo.TEXTURE_LOCATION +":"+ BlockInfo.SLAVEDBUNNY_TEXTURE);
+		topIcon = register.registerIcon("twisted:slavedbunny_side");
+		sideIcon = register.registerIcon(BlockInfo.TEXTURE_LOCATION +":"+  BlockInfo.SLAVEDBUNNY_TEXTURE);
 	}
-	
 	@SideOnly(Side.CLIENT)
 	@Override
 	public Icon getIcon(int side, int meta) {
-		return MachineIcon;
+		if (side == 1){
+			return topIcon;
+		}else{
+			return sideIcon;
+			}
 	}
 	
 	@Override

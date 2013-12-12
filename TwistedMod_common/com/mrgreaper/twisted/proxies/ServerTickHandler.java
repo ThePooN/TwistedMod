@@ -39,7 +39,9 @@ public class ServerTickHandler implements ITickHandler {
 			}
 			if (itemstack.getItem() != Items.bunnye){
 				sound = false;
+			
 			}
+			
 		}
 	}
 	

@@ -16,8 +16,9 @@ public class SpeechHandler {
 
 	public static void speechSynth(World world,Entity entityname,double vVoice,float vPitch,float vPitchRange,float vPitchShift,String vSentence ) {
 		String VOICENAME = "kevin16";
-		if (vVoice == 1){ VOICENAME = "kevin";};
+		if (vVoice == 1) {VOICENAME = "kevin";}; //for now we wont use the low quality one, it would proberly not be used much and thus the removal of an augment will help players
 		if (vVoice == 2) {VOICENAME = "kevin16";};
+		//if (vVoice == 3) {VOICENAME = "alan";}; //REMed out as alan can only talk about the time...which would get confusng for some users
 		
 		Voice voice;
 		VoiceManager vm= VoiceManager.getInstance();

@@ -46,7 +46,7 @@ public class BlockInfo {
 	
 	public static final String ALARM_TEXTURE = "speaker";
 	
-	public static int GEORGESKULL_ID;
+	public static int GEORGESKULL_ID;// wip
 	public static final String GEORGESKULL_KEY = "georgeskull";
 	public static final int GEORGESKULL_DEFAULT = 2153;
 	public static final String GEORGESKULL_UNLOCALIZED_NAME ="georgeSkull";
@@ -58,7 +58,7 @@ public class BlockInfo {
 	public static final int SLAVEDBUNNY_DEFAULT = 2154;
 	public static final String SLAVEDBUNNY_UNLOCALIZED_NAME ="slavedBunny";
 	public static final String SLAVEDBUNNY_NAME = "Enslaved Bunny";
-	public static final String SLAVEDBUNNY_TEXTURE = "slavedbunny";	
+	public static final String SLAVEDBUNNY_TEXTURE = "slavedbunny_side";	
 	public static final String SLAVEDBUNNY_TE_key = "slavedbunnyTileEntity";
 
 }

@@ -3,10 +3,10 @@ package com.mrgreaper.twisted.items;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-
 import appeng.api.Materials;
 
 import com.mrgreaper.twisted.TwistedMod;
+import com.mrgreaper.twisted.blocks.Blocks;
 import com.mrgreaper.twisted.config.configInfo;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -27,6 +27,14 @@ public static void registerRecipes() {
 					'/', Item.stick 
 				 });	*/	
 //my recipes
+	GameRegistry.addRecipe(new ItemStack(Blocks.slavedbunny),//output item
+			new Object[] { 	"C C",//crafting grid
+							" D ",
+							"C C",
+							
+							'D', Items.bunnya, //items used in the above list
+							'C', Block.music 
+						 });
 GameRegistry.addRecipe(new ItemStack(Items.bunnyd),//output item
 		new Object[] { 	"C C",//crafting grid
 						" D ",
