@@ -79,7 +79,7 @@ public void load(FMLInitializationEvent event){
  // new GenerationHandeler();
   new GuiHandler();
   
-  SpeechHandler.speechSynth(null, null, 2, 10, 10, 10, "speech is on");
+  //SpeechHandler.speechSynth(null, null, 2, 10, 10, 10, "speech is on");
 }
 
 @EventHandler
