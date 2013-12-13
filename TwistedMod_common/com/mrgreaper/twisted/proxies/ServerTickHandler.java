@@ -60,7 +60,7 @@ public class ServerTickHandler implements ITickHandler {
 	                  entityplayer = (EntityPlayer)iterator.next(); //would be nice if i could get the range the player is from the tileentity to control the volume....some day 
 	      			//SpeechHandler.speechSynth(world, entityname, vVoice, vPitch, vPitchRange, vPitchShift, vSentence);
 	                  Random randomGenerator = new Random();
-	  			   	int randomInt = randomGenerator.nextInt(10);
+	  			   	int randomInt = randomGenerator.nextInt(15);
 	                if (randomInt == 0)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "I cant feel my tail");
 	                if (randomInt == 1)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "Help im trapped! What have you done to me");
 	                if (randomInt == 2)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "I dont feel right");
@@ -72,6 +72,11 @@ public class ServerTickHandler implements ITickHandler {
 	                if (randomInt == 8)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "why do you hate bunnys?");
 	                if (randomInt == 9)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "I have candy");
 	                if (randomInt == 10)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "did you have to plug it in there?!");
+	                if (randomInt == 11)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "can you digitize a carrot for me?");
+	                if (randomInt == 12)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "im not digging out of here, honest");
+	                if (randomInt == 13)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "Its so cold in here");
+	                if (randomInt == 14)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "Maybe i want to be in here");
+	                if (randomInt == 15)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "why is it so dark?");
 	      			sound = true;
 	      			System.out.println(entityplayer);
 	      			 {
