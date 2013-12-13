@@ -1,5 +1,7 @@
 package com.mrgreaper.twisted.proxies;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.Iterator;
 import java.util.List;
@@ -57,26 +59,15 @@ public class ServerTickHandler implements ITickHandler {
 	  //iterate
 	              while (iterator.hasNext())
 	              {
+	            	  ArrayList<String> enslavedBunnyTemp = new ArrayList<String>(Arrays.asList("why is it so dark?","Maybe i want to be in here","Its so cold in here","im not digging out of here, honest","can you digitize a carrot for me?","did you have to plug it in there?!","I have candy","why do you hate bunnys?","please, end my pain","let me out","I cant feel my tail","Help im trapped! What have you done to me","I dont feel right","my voice is wrong","you have no heart","where is this wire plugged in?"));//make an array list so we can add to it easierly
+	            	  String enslavedBunnyOnHoldArray[] = new String[enslavedBunnyTemp.size()];
+	            	  enslavedBunnyOnHoldArray = enslavedBunnyTemp.toArray(enslavedBunnyOnHoldArray);//copy the arraylist to the array
+	 
 	                  entityplayer = (EntityPlayer)iterator.next(); //would be nice if i could get the range the player is from the tileentity to control the volume....some day 
 	      			//SpeechHandler.speechSynth(world, entityname, vVoice, vPitch, vPitchRange, vPitchShift, vSentence);
-	                  Random randomGenerator = new Random();
-	  			   	int randomInt = randomGenerator.nextInt(15);
-	                if (randomInt == 0)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "I cant feel my tail");
-	                if (randomInt == 1)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "Help im trapped! What have you done to me");
-	                if (randomInt == 2)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "I dont feel right");
-	                if (randomInt == 3)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "my voice is wrong");
-	                if (randomInt == 4)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "you have no heart");
-	                if (randomInt == 5)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "where is this wire plugged in?");
-	                if (randomInt == 6)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "let me out");
-	                if (randomInt == 7)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "please, end my pain");
-	                if (randomInt == 8)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "why do you hate bunnys?");
-	                if (randomInt == 9)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "I have candy");
-	                if (randomInt == 10)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "did you have to plug it in there?!");
-	                if (randomInt == 11)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "can you digitize a carrot for me?");
-	                if (randomInt == 12)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "im not digging out of here, honest");
-	                if (randomInt == 13)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "Its so cold in here");
-	                if (randomInt == 14)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "Maybe i want to be in here");
-	                if (randomInt == 15)SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, "why is it so dark?");
+	                  Random randomGenerator = new Random(); //get a random number
+	  			   	int randomInt = randomGenerator.nextInt(enslavedBunnyOnHoldArray.length); //that is equal to the number of entries in the array were using
+	  			  SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, enslavedBunnyOnHoldArray[randomInt]); //play an entry from the array
 	      			sound = true;
 	      			System.out.println(entityplayer);
 	      			 {
