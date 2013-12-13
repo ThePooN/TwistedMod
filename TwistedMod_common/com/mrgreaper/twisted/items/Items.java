@@ -21,12 +21,19 @@ public class Items {
 	
 	public static void init() {
 		bunnyd = new itemBunnyD(ItemInfo.BUNNYD_ID);
+		GameRegistry.registerItem(bunnyd, ItemInfo.BUNNYD_KEY); 
 		bunnye = new ItemBunnyE(ItemInfo.BUNNYE_ID);
+		GameRegistry.registerItem(bunnye, ItemInfo.BUNNYE_KEY);
 		bunnya = new ItemBunnyA(ItemInfo.BUNNYA_ID);
+		GameRegistry.registerItem(bunnya, ItemInfo.BUNNYA_KEY);
 		orphantear = new itemOrphanTear(ItemInfo.ORPHANTEAR_ID);
+		GameRegistry.registerItem(orphantear, ItemInfo.ORPHANTEAR_KEY);
 		deathorb = new ItemDeathOrb(ItemInfo.DEATHORB_ID);
+		GameRegistry.registerItem(deathorb, ItemInfo.DEATHORB_KEY);
 		balloonr = new ItemBalloonR(ItemInfo.BALLOONR_ID);
+		GameRegistry.registerItem(balloonr, ItemInfo.BALLOONR_KEY);
 		orphanleg = new ItemOrphanLeg(ItemInfo.ORPHANLEG_ID, 2, true);
+		GameRegistry.registerItem(orphanleg, ItemInfo.ORPHANLEG_KEY);
 		
 		//bunnys = new ItemBunnyS(ItemInfo.BUNNYS_ID, 0, 0, false);
 	}
