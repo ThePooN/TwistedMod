@@ -7,6 +7,7 @@ Most code is public domain under Creative Commons 0: http://creativecommons.org/
 Textures and binaries are licensed under Creative Commons 3 *: http://creativecommons.org/licenses/by/3.0/
 Any alternate licenses are noted where appropriate
 *where applicable
+*side note, i request you do not copy whole classes from my mod etc thats just not cool :)
 
 freetts is used within its license as stated here : http://freetts.sourceforge.net/license.terms
 and is used unmodified 
