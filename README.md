@@ -1,3 +1,6 @@
+This is being re-written for 1.7.x see https://github.com/mrgreaper/TwistedMod2/ 
+
+
 TwistedMod
 ==========
 
