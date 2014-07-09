@@ -40,6 +40,8 @@ public class TwistedMod {
         }
 };
 
+public static boolean isClient;
+
 @Instance(ModInformation.ID)
 public static TwistedMod instance;
 
@@ -48,6 +50,9 @@ public static CommonProxy proxy;
 
 @EventHandler
 public void preInit(FMLPreInitializationEvent event){
+	
+	isClient = event.getSide().isClient();
+	
 	//in here stuff is loaded like loading textures and sounds, aking configs etc
     ConfigHandler.init(event.getSuggestedConfigurationFile());
 	if (configInfo.DEBUG){

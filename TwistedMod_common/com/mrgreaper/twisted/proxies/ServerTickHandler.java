@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import com.mrgreaper.twisted.TwistedMod;
 import com.mrgreaper.twisted.blocks.BlockInfo;
 import com.mrgreaper.twisted.blocks.Blocks;
 import com.mrgreaper.twisted.client.sounds.Sounds;
@@ -67,7 +68,8 @@ public class ServerTickHandler implements ITickHandler {
 	      			//SpeechHandler.speechSynth(world, entityname, vVoice, vPitch, vPitchRange, vPitchShift, vSentence);
 	                  Random randomGenerator = new Random(); //get a random number
 	  			   	int randomInt = randomGenerator.nextInt(enslavedBunnyOnHoldArray.length); //that is equal to the number of entries in the array were using
-	  			  SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, enslavedBunnyOnHoldArray[randomInt]); //play an entry from the array
+	  			  if(TwistedMod.isClient)
+	  				  SpeechHandler.speechSynth(null, null, 2, 25, 5, 10, enslavedBunnyOnHoldArray[randomInt]); //play an entry from the array
 	      			sound = true;
 	      			System.out.println(entityplayer);
 	      			 {
